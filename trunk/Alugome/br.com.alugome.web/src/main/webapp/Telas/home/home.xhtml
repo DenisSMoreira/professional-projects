@@ -1,0 +1,50 @@
+
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core" >
+
+    <h:head>
+
+        <title>Home - fake</title>
+    </h:head>
+
+    <h:body>
+        <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                        template="../comum/Template.xhtml">
+            <ui:define name="top">
+                <h:form>  
+                    <p:growl id="messages"/> 
+                    <p:menubar id="menuBar" >  
+
+                        <p:submenu label="Autenticação - Login " icon="ui-icon-pencil">  
+                            <p:menuitem value="Cadastrar Senha" action="#{home.forwardCadastrar()}"  icon="ui-icon-arrowreturnthick-1-w" />  
+                            <p:menuitem value="Desbloquar Senha" action="#{home.forwardDesbloquear()}"   icon="ui-icon-arrowreturnthick-1-w" />  
+                            <p:menuitem value="Recuperar Senha" action="#{home.forwardRecuperar()}"   icon="ui-icon-arrowreturnthick-1-w" />  
+                            <p:menuitem value="Alterar Senha" action="#{home.forwardAlterar()}"   icon="ui-icon-arrowreturnthick-1-w" />  
+
+                        </p:submenu>  
+
+                        <p:submenu label="Relatorios" icon="ui-icon-gear">  
+                            <p:menuitem value="Acessos" actionListener="#{buttonBean.save}" icon="ui-icon-disk" update="messages"/>  
+                            <p:menuitem value="Dados técnicos" actionListener="#{buttonBean.update}" icon="ui-icon-disk" update="messages"/>  
+                            <p:menuitem value="User's bloqueados" actionListener="#{buttonBean.delete}" icon="ui-icon-disk" update="messages" ajax="false"/>  
+                        </p:submenu>  
+                        <p:submenu label="Conguraçao" icon="ui-icon-gear">  
+                            <p:menuitem value="Acessos" actionListener="#{home.forwardConfigurar()}" icon="ui-icon-disk" update="messages"/>  
+                       </p:submenu>  
+                        <p:menuitem value="Logout" url="http://www.primefaces.org" icon="ui-icon-close" />  
+                    </p:menubar>  
+
+                </h:form>
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,37 @@
+
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core" >
+    
+    <h:head>
+     
+        <title>Sistema Administrativo - Escolare</title>
+    </h:head>
+
+    <h:body>
+
+         
+<h:form id="form">  
+ 
+    <p:panel id="panel" header="Aviso - Usuario" style="width: 430px; margin: 15% auto;">  
+    
+         <p:message id="msg"/>
+       
+
+        <p:commandButton value="#{autenticacao.botao}"   
+                action="#{autenticacao.login}"   
+                id="btnGlobal" global="false"  update="panel" />  
+     
+      </p:panel>  
+      
+</h:form>  
+
+    </h:body>
+</html>
+
