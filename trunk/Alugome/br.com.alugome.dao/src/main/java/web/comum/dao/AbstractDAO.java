@@ -20,7 +20,7 @@ import web.comum.dao.exception.DataBaseException;
 public abstract class AbstractDAO<T, K> implements IDAO<T, K> {
 
 
-    @PersistenceContext(unitName="Webapp")
+    @PersistenceContext(unitName="WebApp")
     private EntityManager entityManager;
 
 
