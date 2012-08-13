@@ -58,7 +58,7 @@ public class Autenticacao implements Serializable {
             }
         }
         catch (BaseException ex) {
-            Logger.getLogger(Autenticacao.class.getName()).log(Level.WARN, ex.getMessage(), ex);
+            Logger.getLogger(Autenticacao.class.getName()).error(ex.getMessage(), ex);
         }
         return retorno;
     }
