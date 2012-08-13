@@ -1,11 +1,9 @@
 package com.alugome.entitys;
 
 import java.sql.Date;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -23,10 +21,12 @@ public class Login implements java.io.Serializable {
     @GeneratedValue
     private Long id;
     
-    @OneToOne
-    private HistSenha histSenha;    
+    @OneToMany
+    private HistSenha histSenha;   
     
-    private Long cpf;
+    @OneToOne
+    private Usuario usuario;
+
     private String senha;
     private Integer perguntaSecreta;
     private String respostaSecreta;
@@ -68,20 +68,6 @@ public class Login implements java.io.Serializable {
      */
     public void setHistSenha(HistSenha histSenha) {
         this.histSenha = histSenha;
-    }
-
-    /**
-     * @return the cpf
-     */
-    public Long getCpf() {
-        return cpf;
-    }
-
-    /**
-     * @param cpf the cpf to set
-     */
-    public void setCpf(Long cpf) {
-        this.cpf = cpf;
     }
 
     /**
@@ -194,6 +180,20 @@ public class Login implements java.io.Serializable {
      */
     public void setFlagExclusao(Boolean flagExclusao) {
         this.flagExclusao = flagExclusao;
+    }
+
+    /**
+     * @return the usuario
+     */
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    /**
+     * @param usuario the usuario to set
+     */
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
 
