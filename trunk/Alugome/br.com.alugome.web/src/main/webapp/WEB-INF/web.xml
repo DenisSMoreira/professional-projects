@@ -60,7 +60,7 @@
         <session-timeout>15</session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>/Telas/autenticacao/Autenticacao.xhtml</welcome-file>
+        <welcome-file>/Telas/login/autenticacao/Autenticacao.xhtml</welcome-file>
     </welcome-file-list>
     <!-- Error Handle   -->
     <error-page>
