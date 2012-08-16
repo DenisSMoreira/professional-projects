@@ -12,14 +12,8 @@
 package br.com.sokkyo.view.login;
 
 
-import com.Sokkyo.Login.Acesso.ContaPerdida.*;
 import com.Sokkyo.Login.Acesso.Login;
-
 import com.Sokkyo.Utilitarios.Conexão.Conexão;
-import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
@@ -192,7 +186,11 @@ public class RecuperarSenha extends javax.swing.JFrame {
         jLabel2.setText("Email do Usuario");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, 20));
 
-        cpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        try {
+            cpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         cpf.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel1.add(cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 170, -1));
 
@@ -234,7 +232,7 @@ public class RecuperarSenha extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addContainerGap())
         );
