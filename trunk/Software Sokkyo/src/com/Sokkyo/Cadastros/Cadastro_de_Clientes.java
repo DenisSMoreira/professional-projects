@@ -37,19 +37,17 @@ public final class Cadastro_de_Clientes extends javax.swing.JFrame {
         initComponents();
         software_sokkyo = new Conexão();
         software_sokkyo.conecta();
-     try{
-PreencherTable2();
-software_sokkyo.executeSQL("select * from cadastro_cliente");
-calcularNumero();
-PreencherTable();
- software_sokkyo.resultset.first();
- mostrar_dados();
- navega = 1;
-         }
-     catch(Exception e){
-
-     }
-           
+        try {
+            PreencherTable2();
+            software_sokkyo.executeSQL("select * from cadastro_cliente");
+            calcularNumero();
+            PreencherTable();
+            software_sokkyo.resultset.first();
+            mostrar_dados();
+            navega = 1;
+        } catch (Exception e) {
+        }
+   
     }
 
     /** This method is called from within the constructor to
@@ -193,7 +191,7 @@ PreencherTable();
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        WWW.setFont(new java.awt.Font("BankGothic Md BT", 1, 12));
+        WWW.setFont(new java.awt.Font("BankGothic Md BT", 1, 12)); // NOI18N
         WWW.setForeground(new java.awt.Color(102, 102, 102));
         WWW.setText("www.nokys.com.br");
         WWW.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -211,7 +209,7 @@ PreencherTable();
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 830, -1));
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/people(2).png"))); // NOI18N
         jButton3.setMnemonic('N');
         jButton3.setText(" Novo");
@@ -228,7 +226,7 @@ PreencherTable();
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 6, 100, 40));
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/gtk_edit.png"))); // NOI18N
         jButton4.setMnemonic('E');
         jButton4.setText(" Editar");
@@ -240,7 +238,7 @@ PreencherTable();
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 6, 110, 40));
 
-        jButton7.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jButton7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/12594410.png"))); // NOI18N
         jButton7.setMnemonic('x');
         jButton7.setText(" Excluir");
@@ -252,7 +250,7 @@ PreencherTable();
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 6, 110, 40));
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/6155_32x32.png"))); // NOI18N
         jButton6.setMnemonic('c');
         jButton6.setText(" Cancelar");
@@ -264,7 +262,7 @@ PreencherTable();
         });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 130, 140, 40));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/ok-32x32.png"))); // NOI18N
         jButton1.setText(" Confirmar");
         jButton1.setToolTipText("Confirmar cadastro de Cliente");
@@ -275,7 +273,7 @@ PreencherTable();
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 80, 140, -1));
 
-        jButton10.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jButton10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/1408_32x32.png"))); // NOI18N
         jButton10.setText("Procurar");
         jButton10.setToolTipText("Efetuar Busca mais detalhada do cliente");
@@ -286,7 +284,7 @@ PreencherTable();
         });
         getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, 140, 40));
 
-        jButton11.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jButton11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/print_icon.gif"))); // NOI18N
         jButton11.setText("Gerar Relatorio");
         jButton11.setToolTipText("Efetuar Busca mais detalhada do cliente");
@@ -297,7 +295,7 @@ PreencherTable();
         });
         getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, 140, 40));
 
-        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jTabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTabbedPane1MouseClicked(evt);
@@ -309,15 +307,15 @@ PreencherTable();
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Buscar Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(153, 153, 153))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel23.setText("RG:");
         jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 30, 20));
 
-        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel24.setText("Nome:");
         jPanel3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 40, 20));
 
-        BuscaNome.setFont(new java.awt.Font("Tahoma", 1, 11));
+        BuscaNome.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BuscaNome.setToolTipText("Digite o nome do cliente e aperte 'Enter' para efetuar a busca");
         BuscaNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -326,7 +324,7 @@ PreencherTable();
         });
         jPanel3.add(BuscaNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 200, -1));
 
-        buscaCPF.setFont(new java.awt.Font("Tahoma", 1, 11));
+        buscaCPF.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         buscaCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscaCPFActionPerformed(evt);
@@ -341,7 +339,7 @@ PreencherTable();
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sexo.add(masculino);
-        masculino.setFont(new java.awt.Font("Tahoma", 1, 12));
+        masculino.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         masculino.setText("Masculino");
         masculino.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -351,7 +349,7 @@ PreencherTable();
         jPanel4.add(masculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
 
         sexo.add(feminino);
-        feminino.setFont(new java.awt.Font("Tahoma", 1, 12));
+        feminino.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         feminino.setText("Feminino");
         feminino.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -374,20 +372,20 @@ PreencherTable();
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fotux, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+            .addComponent(fotux, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fotux, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+            .addComponent(fotux, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 130, 130));
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel15.setText("Celular:");
         jPanel7.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 50, 20));
 
-        nome.setFont(new java.awt.Font("Tahoma", 1, 11));
+        nome.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         nome.setToolTipText("Digite o nome completo do cliente ");
         nome.setNextFocusableComponent(endereco);
         nome.addActionListener(new java.awt.event.ActionListener() {
@@ -397,28 +395,28 @@ PreencherTable();
         });
         jPanel7.add(nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 210, -1));
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel18.setText("Nome:");
         jPanel7.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 40, 20));
 
-        codigo1.setFont(new java.awt.Font("Tahoma", 1, 11));
+        codigo1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         codigo1.setToolTipText("Codigo do Cliente");
         codigo1.setRequestFocusEnabled(false);
         jPanel7.add(codigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 100, -1));
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel19.setText("Endereço:");
         jPanel7.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, 20));
 
-        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel21.setText("Codigo:");
         jPanel7.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 50, 20));
 
-        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel26.setText("UF:");
         jPanel7.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 20, 20));
 
-        bairro.setFont(new java.awt.Font("Tahoma", 1, 11));
+        bairro.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel7.add(bairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 100, -1));
 
         try {
@@ -427,22 +425,22 @@ PreencherTable();
             ex.printStackTrace();
         }
         cep.setToolTipText("");
-        cep.setFont(new java.awt.Font("Tahoma", 1, 11));
+        cep.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel7.add(cep, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, 100, -1));
 
-        numero.setFont(new java.awt.Font("Tahoma", 1, 11));
+        numero.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         numero.setToolTipText("Numero da Residencia");
         jPanel7.add(numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 50, -1));
 
-        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel28.setText("CEP:");
         jPanel7.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 30, 20));
 
-        cidade.setFont(new java.awt.Font("Tahoma", 1, 11));
+        cidade.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cidade.setToolTipText("Cidade onde o cliente mora");
         jPanel7.add(cidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 100, -1));
 
-        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel29.setText("Bairro:");
         jPanel7.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 50, 20));
 
@@ -451,10 +449,10 @@ PreencherTable();
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        telefone.setFont(new java.awt.Font("Tahoma", 1, 11));
+        telefone.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel7.add(telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 100, -1));
 
-        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel30.setText("Cidade:");
         jPanel7.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 50, 20));
 
@@ -463,10 +461,10 @@ PreencherTable();
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        celular.setFont(new java.awt.Font("Tahoma", 1, 11));
+        celular.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel7.add(celular, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 100, -1));
 
-        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel31.setText("Telefone:");
         jPanel7.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 60, 20));
 
@@ -475,10 +473,10 @@ PreencherTable();
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        rg.setFont(new java.awt.Font("Tahoma", 1, 11));
+        rg.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel7.add(rg, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 100, -1));
 
-        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel32.setText("RG:");
         jPanel7.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 30, 20));
 
@@ -487,35 +485,35 @@ PreencherTable();
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        nascimento.setFont(new java.awt.Font("Tahoma", 1, 11));
+        nascimento.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel7.add(nascimento, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 100, -1));
 
-        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel33.setText("Data de Nascimento:");
         jPanel7.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 130, 20));
 
-        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel34.setText("Registro:");
         jPanel7.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 60, 20));
 
-        registro.setFont(new java.awt.Font("Tahoma", 1, 11));
+        registro.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         registro.setRequestFocusEnabled(false);
         jPanel7.add(registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 100, -1));
 
-        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel35.setText("Numero");
         jPanel7.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 50, 20));
 
-        uf.setFont(new java.awt.Font("Tahoma", 1, 11));
+        uf.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         uf.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SP", "RJ", "MG", "PA", "PB", "PR", "TO", "AM", "BA", "SC" }));
         uf.setToolTipText("Estado ");
         jPanel7.add(uf, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 50, -1));
 
-        endereco.setFont(new java.awt.Font("Tahoma", 1, 11));
+        endereco.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         endereco.setToolTipText("Digite o endereço do cliente ");
         jPanel7.add(endereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 210, 20));
 
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/http___iconesbr.oficinadanet.com_10684_32x32.png"))); // NOI18N
         jButton8.setText("Selecionar");
         jButton8.setToolTipText("Selecionar Foto");
@@ -532,14 +530,14 @@ PreencherTable();
             ex.printStackTrace();
         }
         cpf.setToolTipText("CPF do Cliente");
-        cpf.setFont(new java.awt.Font("Tahoma", 1, 11));
+        cpf.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel7.add(cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 100, -1));
 
-        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel38.setText("CPF:");
         jPanel7.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, -1, 20));
 
-        Fotu.setFont(new java.awt.Font("Tahoma", 1, 11));
+        Fotu.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Fotu.setText("Foto:");
         jPanel7.add(Fotu, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, -1, 20));
 
@@ -548,37 +546,37 @@ PreencherTable();
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados Extras", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(153, 153, 153))); // NOI18N
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel50.setText("Email");
         jPanel13.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 40, 20));
 
-        email.setFont(new java.awt.Font("Tahoma", 1, 11));
+        email.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         email.setToolTipText("Digite o endereço do cliente ");
         jPanel13.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 200, -1));
 
-        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel36.setText("Web Site");
         jPanel13.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 60, 20));
 
-        site.setFont(new java.awt.Font("Tahoma", 1, 11));
+        site.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         site.setToolTipText("Digite o endereço do cliente ");
         jPanel13.add(site, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 170, -1));
 
-        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel37.setText("Tipo Residencia");
         jPanel13.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 100, 20));
 
-        residencia.setFont(new java.awt.Font("Tahoma", 1, 11));
+        residencia.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         residencia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Propria", "Alugada", "Cedida", "Outra..." }));
         residencia.setToolTipText("Tipo de Residencia em que o cliente vive");
         jPanel13.add(residencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 100, -1));
 
-        estadocivil.setFont(new java.awt.Font("Tahoma", 1, 11));
+        estadocivil.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         estadocivil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro(a)", "Casado(a)", "Viuvo(a)" }));
         estadocivil.setToolTipText("Estado Civil do Cliente");
         jPanel13.add(estadocivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 100, -1));
 
-        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12));
+        jLabel42.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel42.setText("Estado civil");
         jPanel13.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 80, 20));
 
@@ -592,7 +590,7 @@ PreencherTable();
 
         jPanel1.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 620, 80));
 
-        Ultimo1.setFont(new java.awt.Font("Tahoma", 1, 11));
+        Ultimo1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Ultimo1.setForeground(new java.awt.Color(153, 153, 153));
         Ultimo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/ultimo_32x32.png"))); // NOI18N
         Ultimo1.setToolTipText("Ultimo");
@@ -611,7 +609,7 @@ PreencherTable();
         });
         jPanel1.add(Ultimo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, 40, -1));
 
-        Proximo1.setFont(new java.awt.Font("Tahoma", 1, 11));
+        Proximo1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Proximo1.setForeground(new java.awt.Color(153, 153, 153));
         Proximo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/proximo_32x32.png"))); // NOI18N
         Proximo1.setToolTipText("Proximo");
@@ -631,7 +629,7 @@ PreencherTable();
         });
         jPanel1.add(Proximo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 40, -1));
 
-        Anterior1.setFont(new java.awt.Font("Tahoma", 1, 11));
+        Anterior1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Anterior1.setForeground(new java.awt.Color(153, 153, 153));
         Anterior1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/anterior_32x32.png"))); // NOI18N
         Anterior1.setToolTipText("Anterior");
@@ -650,7 +648,7 @@ PreencherTable();
         });
         jPanel1.add(Anterior1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, 40, -1));
 
-        Primeiro1.setFont(new java.awt.Font("Tahoma", 1, 11));
+        Primeiro1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Primeiro1.setForeground(new java.awt.Color(153, 153, 153));
         Primeiro1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/primeiro_32x32.png"))); // NOI18N
         Primeiro1.setToolTipText("Primeiro");
@@ -671,7 +669,7 @@ PreencherTable();
 
         jTabbedPane1.addTab("Clientes", jPanel1);
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jTable1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -715,7 +713,7 @@ PreencherTable();
         jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Arial", 1, 11));
+        jRadioButton2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jRadioButton2.setText("Codigo");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -725,7 +723,7 @@ PreencherTable();
         jPanel14.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, 20));
 
         buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Arial", 1, 11));
+        jRadioButton1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jRadioButton1.setText("Nome");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -734,10 +732,10 @@ PreencherTable();
         });
         jPanel14.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 20));
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 10));
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel16.setText("  Numero de cliente Cadastrados:   ");
 
-        numerodecliente.setFont(new java.awt.Font("Tahoma", 1, 10));
+        numerodecliente.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         numerodecliente.setText("0");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -761,7 +759,7 @@ PreencherTable();
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap(30, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(numerodecliente, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -771,7 +769,7 @@ PreencherTable();
                         .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Clientes Cadastrados", jPanel6);
@@ -781,7 +779,7 @@ PreencherTable();
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Buscar Veiculo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(153, 153, 153))); // NOI18N
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        placa.setFont(new java.awt.Font("Tahoma", 1, 11));
+        placa.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         placa.setToolTipText("Digite a Placa e aperte 'Enter' para efetuar a busca");
         placa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -790,7 +788,7 @@ PreencherTable();
         });
         jPanel10.add(placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 200, -1));
 
-        jLabel51.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel51.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel51.setText("Placa:");
         jPanel10.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 40, 20));
 
@@ -825,84 +823,84 @@ PreencherTable();
 
         jPanel11.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 450, 210));
 
-        jLabel40.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel40.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel40.setText("Portas:");
         jPanel11.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 50, 20));
 
-        marca.setFont(new java.awt.Font("Tahoma", 1, 11));
+        marca.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         marca.setToolTipText("Digite a Marca do Veiculo");
         jPanel11.add(marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 190, -1));
 
-        jLabel41.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel41.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel41.setText("Marca:");
         jPanel11.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 40, 20));
 
-        codigo.setFont(new java.awt.Font("Tahoma", 1, 11));
+        codigo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         codigo.setToolTipText("Codigo do Cliente");
         codigo.setRequestFocusEnabled(false);
         jPanel11.add(codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 100, -1));
 
-        jLabel43.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel43.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel43.setText("Codigo:");
         jPanel11.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, 50, 20));
 
-        placaC.setFont(new java.awt.Font("Tahoma", 1, 11));
+        placaC.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         placaC.setToolTipText("Placa do Veiculo");
         jPanel11.add(placaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 80, -1));
 
-        jLabel45.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel45.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel45.setText("Vistoria:");
         jPanel11.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 50, 20));
 
-        km.setFont(new java.awt.Font("Tahoma", 1, 11));
+        km.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         km.setToolTipText("Ano do Modelo do veiculo");
         jPanel11.add(km, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 70, -1));
 
-        jLabel46.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel46.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel46.setText("Modelo:");
         jPanel11.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 50, 20));
 
-        jLabel47.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel47.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel47.setText("Placa:");
         jPanel11.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 50, 20));
 
-        jLabel49.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel49.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel49.setText("Combut:");
         jPanel11.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 50, 20));
 
-        jComboBox8.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jComboBox8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jComboBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2", "4", "6", "8", "limousine", "Ou sei la Oq..." }));
         jComboBox8.setToolTipText("");
         jPanel11.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 100, -1));
 
-        modelo.setFont(new java.awt.Font("Tahoma", 1, 11));
+        modelo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         modelo.setToolTipText("Digite o endereço do cliente ");
         modelo.setNextFocusableComponent(clienteV);
         jPanel11.add(modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 90, 20));
 
-        jLabel54.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel54.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel54.setText("Estado:");
         jPanel11.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 50, 20));
 
-        jComboBox9.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jComboBox9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jComboBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Novo", "Semi - Novo", "Velho" }));
         jComboBox9.setToolTipText("");
         jPanel11.add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, 100, 20));
 
-        jComboBox10.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jComboBox10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Gasolina", "Alcool", "Disel", "Eletrico", "Outro..." }));
         jComboBox10.setToolTipText("Combustivel do Automovel");
         jPanel11.add(jComboBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 100, -1));
 
-        jLabel55.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel55.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel55.setText("Ano Fab.");
         jPanel11.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 50, 20));
 
-        anoFab.setFont(new java.awt.Font("Tahoma", 1, 11));
+        anoFab.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         anoFab.setToolTipText("Ano da Fabricação");
         jPanel11.add(anoFab, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 90, -1));
 
-        jLabel44.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel44.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel44.setText("Chassi");
         jPanel11.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, 20));
 
@@ -912,35 +910,35 @@ PreencherTable();
             ex.printStackTrace();
         }
         vistoria.setToolTipText("Ultima Vistoria");
-        vistoria.setFont(new java.awt.Font("Tahoma", 1, 11));
+        vistoria.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel11.add(vistoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 90, -1));
 
-        chassi.setFont(new java.awt.Font("Tahoma", 1, 11));
+        chassi.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         chassi.setToolTipText("Numero do Chassi");
         chassi.setNextFocusableComponent(modelo);
         jPanel11.add(chassi, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 190, 20));
 
-        jLabel48.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel48.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel48.setText("Cliente:");
         jPanel11.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 50, 20));
 
-        clienteV.setFont(new java.awt.Font("Tahoma", 1, 11));
+        clienteV.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         clienteV.setToolTipText("Dono do Automovel");
         jPanel11.add(clienteV, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 160, 20));
 
-        jLabel56.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel56.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel56.setText("Ano Mod.");
         jPanel11.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 60, 20));
 
-        jLabel58.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jLabel58.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel58.setText("Km");
         jPanel11.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 20, 20));
 
-        anoMod1.setFont(new java.awt.Font("Tahoma", 1, 11));
+        anoMod1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         anoMod1.setToolTipText("Ano do Modelo do veiculo");
         jPanel11.add(anoMod1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 90, -1));
 
-        fc.setFont(new java.awt.Font("Tahoma", 1, 8));
+        fc.setFont(new java.awt.Font("Tahoma", 1, 8)); // NOI18N
         fc.setText("Honda Civic");
         fc.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel11.add(fc, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 440, -1));
@@ -955,7 +953,7 @@ PreencherTable();
 
         jPanel9.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 620, 420));
 
-        jButton9.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/http___iconesbr.oficinadanet.com_10684_32x32.png"))); // NOI18N
         jButton9.setText("Selecionar");
         jButton9.setToolTipText("Selecionar Foto");
@@ -995,7 +993,7 @@ PreencherTable();
         jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Arial", 1, 11));
+        jRadioButton3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jRadioButton3.setText("Codigo");
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1005,7 +1003,7 @@ PreencherTable();
         jPanel15.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, 20));
 
         buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setFont(new java.awt.Font("Arial", 1, 11));
+        jRadioButton4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jRadioButton4.setText("Nome");
         jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1016,11 +1014,11 @@ PreencherTable();
 
         jPanel5.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 19, 176, 50));
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 10));
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         jLabel17.setText("  Numero de Veiculos Cadastrados:   ");
         jPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, 20));
 
-        numerodecliente1.setFont(new java.awt.Font("Tahoma", 1, 10));
+        numerodecliente1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         numerodecliente1.setText("0");
         jPanel5.add(numerodecliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 17, 20));
 
@@ -1031,7 +1029,7 @@ PreencherTable();
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/LogoNoky.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, -10, 380, 350));
 
-        jButton5.setFont(new java.awt.Font("Times New Roman", 1, 12));
+        jButton5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/fechar_32x32.png"))); // NOI18N
         jButton5.setMnemonic('s');
         jButton5.setText(" Sair");
@@ -1650,7 +1648,7 @@ BuscarVeiculoFirst();
 
      public void geraRelatorio() throws JRException, SQLException, ClassNotFoundException {  
          HashMap map = new HashMap();  
-         String arquivo = "F:\\Noky's System\\Software Sokkyo\\src\\com\\Sokkyo\\Cadastros\\report2.jasper";  
+         String arquivo = "C:\\Users\\dmoreira\\Documents\\Software Sokkyo\\src\\com\\Sokkyo\\Cadastros\\report2.jasper";  
          JasperReport jasperReport = (JasperReport) JRLoader.loadObject(arquivo);  
            
          JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, map,software_sokkyo.getConnection());  
@@ -1924,19 +1922,17 @@ public String Verificar(){
 
 
  }
-public String VerificarVeiculo(){
-    String veri;
-    if(marca.getText().equals("") || chassi.equals("") || modelo.equals("") || placaC.equals("") || clienteV.equals("")){
-        JOptionPane.showMessageDialog(null,"Digite os dados do Veiculo");
-       veri = "Yes";
-        return  veri;
+    public String VerificarVeiculo() {
+        String veri;
+        if (marca.getText().equals("") || chassi.equals("") || modelo.equals("") || placaC.equals("") || clienteV.equals("")) {
+            JOptionPane.showMessageDialog(null, "Digite os dados do Veiculo");
+            veri = "Yes";
+            return veri;
+        } else {
+            veri = "No";
+            return veri;
+        }
     }
-
- else {
-        veri = "No";
-        return veri;
- }
-}
 public void PreencherTable2(){
 software_sokkyo.executeSQL("select * from veiculos");
     DefaultTableModel mode = (DefaultTableModel)jTable2.getModel();

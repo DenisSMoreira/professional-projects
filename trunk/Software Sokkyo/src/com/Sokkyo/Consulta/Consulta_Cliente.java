@@ -715,34 +715,27 @@ cidade.setText("");
 
     private void BuscaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscaNomeActionPerformed
         software_sokkyo.executeSQL("select * from cadastro_cliente");
-        if (BuscaNome.getText().equals("")){
-            JOptionPane.showMessageDialog(null,"Por Favor Digite o Nome Do Cliente Desejado!");
+        if (BuscaNome.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Por Favor Digite o Nome Do Cliente Desejado!");
             return;
-        } else
-
-
-
-            try	{
+        } else {
+            try {
 
                 software_sokkyo.resultset.first();
 
-                String igual ="n";
+                String igual = "n";
 
                 int tamanho_pesquisa = BuscaNome.getText().length();
 
-                while ( igual == "n") {
+                while (igual == "n") {
 
-                    String pesquisando = software_sokkyo.resultset.getString("cadastro_nome").substring(0,(tamanho_pesquisa));
+                    String pesquisando = software_sokkyo.resultset.getString("cadastro_nome").substring(0, (tamanho_pesquisa));
 
-                    if(pesquisando.equals(BuscaNome.getText()))
-
-                    {
+                    if (pesquisando.equals(BuscaNome.getText())) {
                         igual = "s";
-                    }
-
-                    else
-
+                    } else {
                         software_sokkyo.resultset.next();
+                    }
 
                 }
 
@@ -752,9 +745,10 @@ cidade.setText("");
 
 
 
-            } catch(SQLException erro) {
-                JOptionPane.showMessageDialog(null,"Nao Foi Localizado os Dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
+            } catch (SQLException erro) {
+                JOptionPane.showMessageDialog(null, "Nao Foi Localizado os Dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
             }
+        }
 }//GEN-LAST:event_BuscaNomeActionPerformed
 
     private void buscaCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscaCPFActionPerformed
