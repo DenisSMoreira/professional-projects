@@ -268,10 +268,10 @@ public class ControleGeral extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        jLabel4.setFont(new java.awt.Font("BankGothic Md BT", 1, 12));
+        jLabel4.setFont(new java.awt.Font("BankGothic Md BT", 1, 12)); // NOI18N
         jLabel4.setText("Usuario:");
 
-        WWW.setFont(new java.awt.Font("BankGothic Md BT", 1, 12));
+        WWW.setFont(new java.awt.Font("BankGothic Md BT", 1, 12)); // NOI18N
         WWW.setText("www.nokys.com.br");
         WWW.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -285,16 +285,16 @@ public class ControleGeral extends javax.swing.JFrame {
             }
         });
 
-        Label_Data1.setFont(new java.awt.Font("BankGothic Md BT", 1, 12));
+        Label_Data1.setFont(new java.awt.Font("BankGothic Md BT", 1, 12)); // NOI18N
         Label_Data1.setText("Data");
 
-        Label_hora.setFont(new java.awt.Font("BankGothic Md BT", 1, 12));
+        Label_hora.setFont(new java.awt.Font("BankGothic Md BT", 1, 12)); // NOI18N
         Label_hora.setText("Hora");
 
-        nome.setFont(new java.awt.Font("BankGothic Md BT", 3, 12));
+        nome.setFont(new java.awt.Font("BankGothic Md BT", 3, 12)); // NOI18N
         nome.setText("Admnistrador");
 
-        Fotu.setFont(new java.awt.Font("Vijaya", 0, 1));
+        Fotu.setFont(new java.awt.Font("Vijaya", 0, 1)); // NOI18N
         Fotu.setForeground(new java.awt.Color(204, 204, 204));
         Fotu.setText("jLabel2");
 
@@ -332,7 +332,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 660, 1010, 20);
 
-        consultar_cliente.setFont(new java.awt.Font("Tahoma", 1, 11));
+        consultar_cliente.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         consultar_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/people(2).png"))); // NOI18N
         consultar_cliente.setMnemonic('N');
         consultar_cliente.setText("Consultar Cliente");
@@ -354,7 +354,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(consultar_cliente);
         consultar_cliente.setBounds(180, 10, 160, 60);
 
-        cadastrar_fun.setFont(new java.awt.Font("Tahoma", 1, 11));
+        cadastrar_fun.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cadastrar_fun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/7797_32x32.png"))); // NOI18N
         cadastrar_fun.setText("Cadastrar Funcionario");
         cadastrar_fun.setToolTipText("Cadastro de Funcionario");
@@ -370,7 +370,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(cadastrar_fun);
         cadastrar_fun.setBounds(10, 80, 160, 60);
 
-        consultar_Peca.setFont(new java.awt.Font("Tahoma", 1, 11));
+        consultar_Peca.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         consultar_Peca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/8404_32x32.png"))); // NOI18N
         consultar_Peca.setText("Consultar Peça");
         consultar_Peca.setToolTipText("Consultar Peça");
@@ -387,7 +387,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(consultar_Peca);
         consultar_Peca.setBounds(180, 150, 160, 60);
 
-        consultar_fornecedor.setFont(new java.awt.Font("Tahoma", 1, 11));
+        consultar_fornecedor.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         consultar_fornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/7813_32x32.png"))); // NOI18N
         consultar_fornecedor.setText("Consultar Fornecedor");
         consultar_fornecedor.setToolTipText("Consultar Fornecedor");
@@ -404,7 +404,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(consultar_fornecedor);
         consultar_fornecedor.setBounds(180, 290, 160, 60);
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/4970_32x32.png"))); // NOI18N
         jButton5.setText("Vender Produto");
         jButton5.setToolTipText("Venda de Peça");
@@ -421,7 +421,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(jButton5);
         jButton5.setBounds(350, 10, 150, 60);
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/1588_32x32.png"))); // NOI18N
         jButton6.setText("Venda de Serviço");
         jButton6.setToolTipText("Venda de Serviço");
@@ -438,7 +438,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(jButton6);
         jButton6.setBounds(350, 80, 150, 60);
 
-        jButton7.setFont(new java.awt.Font("Tahoma", 1, 11));
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/5951_32x32.png"))); // NOI18N
         jButton7.setText("V. Prod. e Serviço");
         jButton7.setToolTipText("Venda de Serviço e Peça");
@@ -455,7 +455,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(jButton7);
         jButton7.setBounds(350, 150, 150, 60);
 
-        consultar_OS.setFont(new java.awt.Font("Tahoma", 1, 11));
+        consultar_OS.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         consultar_OS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/1588_32x32.png"))); // NOI18N
         consultar_OS.setText("Consultar O.S");
         consultar_OS.setToolTipText("Consultar O.S");
@@ -472,7 +472,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(consultar_OS);
         consultar_OS.setBounds(180, 80, 160, 60);
 
-        cadastrar_clie.setFont(new java.awt.Font("Tahoma", 1, 11));
+        cadastrar_clie.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cadastrar_clie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/people(2).png"))); // NOI18N
         cadastrar_clie.setMnemonic('N');
         cadastrar_clie.setText("Cadastrar Cliente");
@@ -499,7 +499,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(cadastrar_clie);
         cadastrar_clie.setBounds(10, 10, 160, 60);
 
-        cadastrar_peca.setFont(new java.awt.Font("Tahoma", 1, 11));
+        cadastrar_peca.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cadastrar_peca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/8404_32x32.png"))); // NOI18N
         cadastrar_peca.setText("Cadastrar Peça");
         cadastrar_peca.setToolTipText("Cadastro de Peça");
@@ -516,7 +516,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(cadastrar_peca);
         cadastrar_peca.setBounds(10, 290, 160, 60);
 
-        cadastrar_for.setFont(new java.awt.Font("Tahoma", 1, 11));
+        cadastrar_for.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cadastrar_for.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/7837_32x32.png"))); // NOI18N
         cadastrar_for.setText("Cadastrar Fornecedor");
         cadastrar_for.setToolTipText("Cadastro de Fornecedor");
@@ -533,7 +533,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(cadastrar_for);
         cadastrar_for.setBounds(10, 150, 160, 60);
 
-        cadastrarrrr.setFont(new java.awt.Font("Tahoma", 1, 11));
+        cadastrarrrr.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         cadastrarrrr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/1588_32x32.png"))); // NOI18N
         cadastrarrrr.setText("Cadastrar O.S");
         cadastrarrrr.setToolTipText("Venda de Serviço");
@@ -550,7 +550,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(cadastrarrrr);
         cadastrarrrr.setBounds(10, 220, 160, 60);
 
-        consultar_fornecedor1.setFont(new java.awt.Font("Tahoma", 1, 11));
+        consultar_fornecedor1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         consultar_fornecedor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/fechar_32x32.png"))); // NOI18N
         consultar_fornecedor1.setText("Fechar Caixa");
         consultar_fornecedor1.setToolTipText("Fechar Caixa");
@@ -567,7 +567,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(consultar_fornecedor1);
         consultar_fornecedor1.setBounds(350, 220, 150, 60);
 
-        consultar_fornecedor2.setFont(new java.awt.Font("Tahoma", 1, 11));
+        consultar_fornecedor2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         consultar_fornecedor2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/1408_32x32.png"))); // NOI18N
         consultar_fornecedor2.setText("Consultar Veiculo");
         consultar_fornecedor2.setToolTipText("Consultar Veiculo");
@@ -584,6 +584,7 @@ public class ControleGeral extends javax.swing.JFrame {
         getContentPane().add(consultar_fornecedor2);
         consultar_fornecedor2.setBounds(180, 220, 160, 60);
 
+        jInternalFrame1.setIconifiable(true);
         jInternalFrame1.setTitle("Lembrete");
         jInternalFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -620,12 +621,12 @@ public class ControleGeral extends javax.swing.JFrame {
 
         jInternalFrame1.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 220, 240));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 13));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/ok-32x32.png"))); // NOI18N
         jButton1.setText("Novo");
         jInternalFrame1.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 40));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 13));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/6155_32x32.png"))); // NOI18N
         jButton2.setText("Sair");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -644,7 +645,7 @@ public class ControleGeral extends javax.swing.JFrame {
 
         jMenu1.setMnemonic('A');
         jMenu1.setText("Arquivo");
-        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu1ActionPerformed(evt);
@@ -652,7 +653,7 @@ public class ControleGeral extends javax.swing.JFrame {
         });
 
         jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem11.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/print_icon.gif"))); // NOI18N
         jMenuItem11.setMnemonic('i');
         jMenuItem11.setText("Gerar Relatorios");
@@ -666,26 +667,26 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu1.add(jSeparator1);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem8.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/8406_16x16.png"))); // NOI18N
         jMenuItem8.setText("Copiar");
         jMenu1.add(jMenuItem8);
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem9.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/8414_16x16.png"))); // NOI18N
         jMenuItem9.setText("Colar");
         jMenu1.add(jMenuItem9);
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_DELETE, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem10.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/6239_16x16.png"))); // NOI18N
         jMenuItem10.setText("Excluir");
         jMenu1.add(jMenuItem10);
         jMenu1.add(jSeparator2);
 
         jMenuItem13.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem13.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/x.png"))); // NOI18N
         jMenuItem13.setMnemonic('s');
         jMenuItem13.setText("Sair");
@@ -698,7 +699,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu1.add(jMenuItem13);
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/8457_16x16.png"))); // NOI18N
         jMenuItem1.setText("Trocar Login");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -712,10 +713,10 @@ public class ControleGeral extends javax.swing.JFrame {
 
         jMenu3.setMnemonic('x');
         jMenu3.setText("Exibir");
-        jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem5.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/web.png"))); // NOI18N
         jMenuItem5.setText("Desenvolvedor");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -727,7 +728,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu3.add(jSeparator3);
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem6.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/8457_16x16.png"))); // NOI18N
         jMenuItem6.setText("Tela Cheia");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
@@ -738,7 +739,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu3.add(jMenuItem6);
 
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem7.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/4958_16x16.png"))); // NOI18N
         jMenuItem7.setText("Calculadora");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
@@ -752,10 +753,10 @@ public class ControleGeral extends javax.swing.JFrame {
 
         OMenuCadastro.setMnemonic('c');
         OMenuCadastro.setText("Cadastro");
-        OMenuCadastro.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        OMenuCadastro.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         menu_clie.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
-        menu_clie.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        menu_clie.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menu_clie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/7837_16x16.png"))); // NOI18N
         menu_clie.setMnemonic('i');
         menu_clie.setText("Cliente");
@@ -767,7 +768,7 @@ public class ControleGeral extends javax.swing.JFrame {
         OMenuCadastro.add(menu_clie);
 
         menu_peca.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
-        menu_peca.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        menu_peca.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menu_peca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/8404_16x16.png"))); // NOI18N
         menu_peca.setMnemonic('e');
         menu_peca.setText("Peça");
@@ -780,7 +781,7 @@ public class ControleGeral extends javax.swing.JFrame {
         OMenuCadastro.add(jSeparator4);
 
         menu_fun.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
-        menu_fun.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        menu_fun.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menu_fun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/7797_16x16_1.png"))); // NOI18N
         menu_fun.setMnemonic('u');
         menu_fun.setText("Funcionario");
@@ -793,7 +794,7 @@ public class ControleGeral extends javax.swing.JFrame {
         OMenuCadastro.add(jSeparator5);
 
         menu_for.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK));
-        menu_for.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        menu_for.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menu_for.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/7813_16x16.png"))); // NOI18N
         menu_for.setMnemonic('r');
         menu_for.setText("Fornecedor");
@@ -805,7 +806,7 @@ public class ControleGeral extends javax.swing.JFrame {
         OMenuCadastro.add(menu_for);
 
         menu_orc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        menu_orc.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        menu_orc.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         menu_orc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/1588_16x16.png"))); // NOI18N
         menu_orc.setMnemonic('n');
         menu_orc.setText("Orçamento");
@@ -821,10 +822,10 @@ public class ControleGeral extends javax.swing.JFrame {
 
         jMenu5.setMnemonic('v');
         jMenu5.setText("Venda");
-        jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMenuItem14.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem14.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/1588_16x16.png"))); // NOI18N
         jMenuItem14.setMnemonic('\u00e7');
         jMenuItem14.setText("Serviço");
@@ -836,7 +837,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu5.add(jMenuItem14);
 
         jMenuItem15.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem15.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/8404_16x16.png"))); // NOI18N
         jMenuItem15.setMnemonic('p');
         jMenuItem15.setText("Peça");
@@ -848,7 +849,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu5.add(jMenuItem15);
 
         jMenuItem16.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F10, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem16.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/5951_16x16.png"))); // NOI18N
         jMenuItem16.setMnemonic('s');
         jMenuItem16.setText("Produto e Serviços");
@@ -863,10 +864,10 @@ public class ControleGeral extends javax.swing.JFrame {
 
         jMenu6.setMnemonic('o');
         jMenu6.setText("Consulta");
-        jMenu6.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenu6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMenuItem17.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem17.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/8404_16x16.png"))); // NOI18N
         jMenuItem17.setText("Peça");
         jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
@@ -878,7 +879,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu6.add(jSeparator7);
 
         jMenuItem18.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem18.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/1588_16x16.png"))); // NOI18N
         jMenuItem18.setMnemonic('o');
         jMenuItem18.setText("Orçamento");
@@ -890,7 +891,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu6.add(jMenuItem18);
 
         jMenuItem37.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem37.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem37.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/7813_16x16.png"))); // NOI18N
         jMenuItem37.setMnemonic('f');
         jMenuItem37.setText("Fornecedor");
@@ -902,7 +903,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu6.add(jMenuItem37);
 
         jMenuItem19.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem19.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/7837_16x16.png"))); // NOI18N
         jMenuItem19.setText("Cliente");
         jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
@@ -916,14 +917,14 @@ public class ControleGeral extends javax.swing.JFrame {
 
         jMenu7.setMnemonic('u');
         jMenu7.setText("Utilitarios");
-        jMenu7.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenu7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMenu10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/tooltip.png"))); // NOI18N
         jMenu10.setText("Aparencia");
-        jMenu10.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenu10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMenuItem26.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F9, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem26.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem26.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem26.setText("Acryl");
         jMenuItem26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -933,7 +934,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu10.add(jMenuItem26);
 
         jMenuItem30.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F12, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem30.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem30.setText("Acryl-Red");
         jMenuItem30.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -943,7 +944,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu10.add(jMenuItem30);
 
         jMenuItem33.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F7, java.awt.event.InputEvent.SHIFT_MASK));
-        jMenuItem33.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem33.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem33.setMnemonic('s');
         jMenuItem33.setText("Smart");
         jMenuItem33.addActionListener(new java.awt.event.ActionListener() {
@@ -955,7 +956,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu10.add(jSeparator15);
 
         jMenuItem34.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_8, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem34.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem34.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem34.setMnemonic('h');
         jMenuItem34.setText("Hifi");
         jMenuItem34.addActionListener(new java.awt.event.ActionListener() {
@@ -966,7 +967,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu10.add(jMenuItem34);
 
         jMenuItem35.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem35.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem35.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem35.setText("Noire");
         jMenuItem35.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -977,7 +978,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu10.add(jSeparator14);
 
         jMenuItem36.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem36.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem36.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem36.setText("Luna");
         jMenuItem36.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -987,10 +988,10 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu10.add(jMenuItem36);
 
         jMenu2.setText("Outras...");
-        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMenuItem32.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem32.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem32.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem32.setText("NimRof(Orange)");
         jMenuItem32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1001,7 +1002,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu2.add(jSeparator12);
 
         jMenuItem25.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F11, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem25.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem25.setText("Liquid");
         jMenuItem25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1016,7 +1017,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu7.add(jSeparator11);
 
         jMenuItem31.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_INSERT, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem31.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/8457_16x16.png"))); // NOI18N
         jMenuItem31.setMnemonic('i');
         jMenuItem31.setText("Carregar Imagen de Fundo");
@@ -1031,10 +1032,10 @@ public class ControleGeral extends javax.swing.JFrame {
 
         jMenu8.setMnemonic('u');
         jMenu8.setText("Ajuda");
-        jMenu8.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenu8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMenuItem27.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
-        jMenuItem27.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem27.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/icon_16x16_help.png"))); // NOI18N
         jMenuItem27.setMnemonic('a');
         jMenuItem27.setText("Ajuda");
@@ -1046,7 +1047,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu8.add(jMenuItem27);
 
         jMenuItem28.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem28.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/icon.gif"))); // NOI18N
         jMenuItem28.setMnemonic('d');
         jMenuItem28.setText("Reportar");
@@ -1059,7 +1060,7 @@ public class ControleGeral extends javax.swing.JFrame {
         jMenu8.add(jSeparator8);
 
         jMenuItem29.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
-        jMenuItem29.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jMenuItem29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/16x16_smiley-wink.gif"))); // NOI18N
         jMenuItem29.setMnemonic('g');
         jMenuItem29.setText("Registrar");
@@ -1079,7 +1080,9 @@ public class ControleGeral extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menu_clieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_clieActionPerformed
-   new Cadastro_de_Clientes().show();
+Cadastro_de_Clientes cadastro_de_Clientes = new Cadastro_de_Clientes();
+      cadastro_de_Clientes.setVisible(true);
+      cadastro_de_Clientes.repaint();
     }//GEN-LAST:event_menu_clieActionPerformed
 
     private void menu_pecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_pecaActionPerformed
