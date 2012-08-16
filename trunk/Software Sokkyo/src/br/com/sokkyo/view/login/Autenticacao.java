@@ -1,9 +1,7 @@
 package br.com.sokkyo.view.login;
 
 
-import com.Sokkyo.Login.Acesso.*;
-import com.Sokkyo.Login.Acesso.ContaPerdida.EsqueciMinhaConta;
-import com.Sokkyo.Utilitarios.LookAndFeel.LookAndFeel;
+import br.com.sokkyo.comum.util.LookAndFeel;
 import com.sun.awt.AWTUtilities;
 import java.awt.event.KeyEvent;
 
@@ -14,14 +12,14 @@ public class Autenticacao extends javax.swing.JFrame {
 
  //Objetos
  LookAndFeel Look = new LookAndFeel();
- Login_Metodos Metodos_Look = new Login_Metodos();
+
 
  
     public Autenticacao() {          
      initComponents();
  // Chama a Aparencia padrão e Conecta com o banco
  Look.lookandfeel(this);
- Metodos_Look.Conectar();
+
 
 //Deixa a Tela 100% transparente mas mostrar seus atributos
 if((AWTUtilities.isTranslucencySupported(AWTUtilities.Translucency.PERPIXEL_TRANSLUCENT))) {
@@ -30,26 +28,7 @@ AWTUtilities.setWindowOpaque(this, false);
 
 
     }
-//Chama o Metodo Verficausuario e Depois Verifica a Variavel de retorno
- public void ChamarVerificação(){
-      if(Metodos_Look.VerificarUsuario(Login.getText(), Senha.getText()) == 0){
-        return;
-   }
-          if(Metodos_Look.Conta == 1){
-             Login.setText("");
-             Senha.setText("");
-         }
-                if(Metodos_Look.Conta == 2){
-                  Login.setText("");
-                  Senha.setText("");
-              }
-                    if(Metodos_Look.Conta == 3){
-                      dispose();
-                   }
-                       if(Metodos_Look.Conta == 4){
-                          dispose();
-                       }
- }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -69,8 +48,8 @@ AWTUtilities.setWindowOpaque(this, false);
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Login");
         setBackground(new java.awt.Color(0, 0, 0));
-        setResizable(false);
         setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -79,7 +58,7 @@ AWTUtilities.setWindowOpaque(this, false);
 
         jButton3.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/6155_32x32.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/6155_32x32.png"))); // NOI18N
         jButton3.setToolTipText("Sair do Login");
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
@@ -94,7 +73,7 @@ AWTUtilities.setWindowOpaque(this, false);
 
         jButton1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/confirmarOpaco.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/confirmarOpaco.png"))); // NOI18N
         jButton1.setToolTipText("Entrar");
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -162,7 +141,7 @@ AWTUtilities.setWindowOpaque(this, false);
         });
         jPanel1.add(CONSEGUE, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 110, 20));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/10hvacw.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/10hvacw.png"))); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 250));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -187,7 +166,7 @@ AWTUtilities.setWindowOpaque(this, false);
     private void SenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SenhaKeyPressed
 //Se  usuario precionar enter ele chama o metodo ChamarVerificação
 if (evt.getKeyCode() == KeyEvent.VK_ENTER){
-   ChamarVerificação();
+ 
  }
     }//GEN-LAST:event_SenhaKeyPressed
 
@@ -198,7 +177,7 @@ if (evt.getKeyCode() == KeyEvent.VK_ENTER){
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
  //chama o metodo ChamarVerificação
-  ChamarVerificação();
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -214,18 +193,17 @@ if (evt.getKeyCode() == KeyEvent.VK_ENTER){
 
     private void CONSEGUEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CONSEGUEMouseClicked
 // Chama a Class EsqueciMinhaConta e fecha o Autenticacao
-new EsqueciMinhaConta().show();
 dispose();
     }//GEN-LAST:event_CONSEGUEMouseClicked
 
     private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
 //se o Mouse for posicionado em Cima ele altera o Icone
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/ok-32x32.png")));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/ok-32x32.png")));
     }//GEN-LAST:event_jButton1MouseEntered
 
     private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
 //se o Mouse for Retirado de Cima dele, ele volta ao icone anterior
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/confirmarOpaco.png")));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/confirmarOpaco.png")));
     }//GEN-LAST:event_jButton1MouseExited
 
     private void LoginFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LoginFocusLost
