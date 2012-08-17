@@ -11,13 +11,6 @@
 
 package br.com.sokkyo.view.consultas;
 
-import com.Sokkyo.Consulta.*;
-import com.Sokkyo.Cadastros.Cadastro_Fornecedor;
-import com.Sokkyo.Utilitarios.Conexão.Conexão;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author Denis
@@ -25,14 +18,10 @@ import javax.swing.table.DefaultTableModel;
 public final class ConsultarFornecedor extends javax.swing.JFrame {
 
  public int navega = 1;
-  Conexão software_Sokkyo;
+  
     public ConsultarFornecedor() {
         initComponents();
 
-                  software_Sokkyo = new Conexão();
-           software_Sokkyo.conecta();
-
-       software_Sokkyo.executeSQL("select * from cadastro_fornecedor");
       
     }
 
@@ -239,14 +228,7 @@ public final class ConsultarFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-       
-     String senha = JOptionPane.showInputDialog(null,"Digite a Senha:");
-        if(senha.equals("admin")){
-       new Cadastro_Fornecedor().show();
-  dispose();}
- else{
-    JOptionPane.showMessageDialog(null,"Acesso Negado");
- }
+  
 }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton9FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton9FocusLost
@@ -254,52 +236,7 @@ public final class ConsultarFornecedor extends javax.swing.JFrame {
 }//GEN-LAST:event_jButton9FocusLost
 
     private void buscForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscForActionPerformed
-     software_Sokkyo.executeSQL("select * from cadastro_fornecedor");
-        if (buscFor.getText().equals("")){
-    JOptionPane.showMessageDialog(null,"Por Favor Digite o Nome Do Cliente Desejado!");
-return;
-}
-else
-
-
-
-        try	{
-
-software_Sokkyo.resultset.first();
-
-String igual ="n";
-
-int tamanho_pesquisa = buscFor.getText().length();
-
-while ( igual == "n")
-{
-
-String pesquisando = software_Sokkyo.resultset.getString("cadastroFor_nome").substring(0,(tamanho_pesquisa));
-
-if(pesquisando.equals(buscFor.getText()))
-
-{
-igual = "s";
-}
-
-else
-
-software_Sokkyo.resultset.next();
-
-}
-
-
-	fonome.setText(software_Sokkyo.resultset.getString("cadastroFor_codig"));
-	mostrar_dados();
-        PreencherDados();
-
-
-}
-	catch(SQLException erro)
-{
-JOptionPane.showMessageDialog(null,"Nao Foi Localizado os Dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
-}
-
+     
 
     }//GEN-LAST:event_buscForActionPerformed
 
@@ -341,43 +278,5 @@ JOptionPane.showMessageDialog(null,"Nao Foi Localizado os Dados ! \nDica: Caso S
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
-public void mostrar_dados(){
-        try{
 
-                 fonome.setText(software_Sokkyo.resultset.getString("cadastroFor_nome"));
-               focodigo.setText(software_Sokkyo.resultset.getString("cadastroFor_codig"));
-              foendereço.setText(software_Sokkyo.resultset.getString("cadastroFor_end"));
-              jTextField1.setText(software_Sokkyo.resultset.getString("cadastroFor_tel"));
-              jTextField2.setText(software_Sokkyo.resultset.getString("cadastroFor_numero"));
-               jComboBox1.setSelectedItem(software_Sokkyo.resultset.getString("cadastroFor_est"));
-                  jTextField3.setText(software_Sokkyo.resultset.getString("cadastroFor_cep"));
-
-            }
-            catch(SQLException erro){
-               if (navega == 1){
-                    JOptionPane.showMessageDialog(null, "Voçê jà Está no Primeiro Registro");
-                  }
-                else if(navega == 2){
-                    JOptionPane.showMessageDialog(null, "Voçê jà Está no Ultimo Registro");
-                  }
-                else
-              JOptionPane.showMessageDialog(null," Nao localizou dados !");//+erro
-                navega = 0;
-            }
-    }
-public void PreencherDados(){
-   software_Sokkyo.executeSQL("select * from cadastro_peca WHERE cadastro_cf = "+focodigo.getText()+"");
-    DefaultTableModel modelo = (DefaultTableModel)jTable1.getModel();
-    modelo.setNumRows(0);
-    try{
-        while (software_Sokkyo.resultset.next())
-            modelo.addRow(new Object[]{software_Sokkyo.resultset.getString("cadastroProd"),software_Sokkyo.resultset.getString("cadastroProdnome"),software_Sokkyo.resultset.getString("cadastroProd_qtd"),software_Sokkyo.resultset.getString("cadastroProd_preco")});
-
-        }
-    catch (SQLException erro){
-        JOptionPane.showMessageDialog(null,"Erro Ao Aprensentar Dados na Tabela");
-    }
-//   software_Sokkyo.executeSQL("select * from cadastro_fornecedor");
-
-}
 }

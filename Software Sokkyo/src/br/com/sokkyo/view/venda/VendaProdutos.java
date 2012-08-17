@@ -11,8 +11,7 @@
 
 package br.com.sokkyo.view.venda;
 
-import com.Sokkyo.Venda.*;
-import com.Sokkyo.Utilitarios.Conexão.Conexão;
+
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,7 +26,7 @@ import javax.swing.JOptionPane;
  */
 public class VendaProdutos extends javax.swing.JFrame {
 
-Conexão softwaresokkyo;
+
 double nt0,nt,nt1;
 
 
@@ -35,8 +34,6 @@ double nt0,nt,nt1;
     public VendaProdutos(String vend) {
         initComponents();
         vendedor.setText(vend);
-        softwaresokkyo = new Conexão();
-        softwaresokkyo.conecta();
         Date data = new Date();
         venda1.setText(""+data.getDate()+"/"+data.getMonth()+"/"+(data.getYear()-100));
 
@@ -315,81 +312,11 @@ double nt0,nt,nt1;
     }// </editor-fold>//GEN-END:initComponents
 
     private void pnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pnomeActionPerformed
-softwaresokkyo.executeSQL("select * from cadastro_peca");
-        try	{
 
-softwaresokkyo.resultset.first();
-
-String igual ="n";
-
-int tamanho_pesquisa = pnome.getText().length();
-
-while ( igual == "n")
-{
-
-String pesquisando = softwaresokkyo.resultset.getString("cadastroProdnome").substring(0,(tamanho_pesquisa));
-
-if(pesquisando.equals(pnome.getText()))
-
-{
-igual = "s";
-}
-
-else
-
-softwaresokkyo.resultset.next();
-
-}
-
-
-	venda.setText(softwaresokkyo.resultset.getString("cadastroProd"));
-	mostrar_dados();
-
-}
-	catch(SQLException erro)
-{
-JOptionPane.showMessageDialog(null,"Nao Foi Localizado os Dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
-}        // TODO add your handling code here:
-        // TODO add your handling code here:
     }//GEN-LAST:event_pnomeActionPerformed
 
     private void pnome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pnome1ActionPerformed
-softwaresokkyo.executeSQL("select * from cadastro_cliente");
-        try	{
 
-softwaresokkyo.resultset.first();
-
-String igual ="n";
-
-int tamanho_pesquisa = pnome1.getText().length();
-
-while ( igual == "n")
-{
-
-String pesquisando = softwaresokkyo.resultset.getString("cadastro_nome").substring(0,(tamanho_pesquisa));
-
-if(pesquisando.equals(pnome1.getText()))
-
-{
-igual = "s";
-}
-
-else
-
-softwaresokkyo.resultset.next();
-
-}
-
-
-	vcodigocli.setText(softwaresokkyo.resultset.getString("codigo_cliente"));
-	pnome1.setText(softwaresokkyo.resultset.getString("cadastro_nome"));
-
-
-}
-	catch(SQLException erro)
-{
-JOptionPane.showMessageDialog(null,"Nao Foi Localizado os Dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
-}         // TODO add your handling code here:
     }//GEN-LAST:event_pnome1ActionPerformed
 
     private void vqtdFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_vqtdFocusLost
@@ -416,34 +343,7 @@ nt0 = 0;
     }//GEN-LAST:event_vendaActionPerformed
 
     private void BConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BConfirmarActionPerformed
-      double nt,nt2,nt3 = 0;
-
-      nt= Double.parseDouble(vqtd.getText());
-      nt2=Double.parseDouble(jLabel50.getText());
-
-     if(nt<nt2){
-          nt3 = nt2 - nt;
-     }
- else { JOptionPane.showMessageDialog(null,"Nao Tem Peças Suficiente!");
- return;
- }
-     String nome = "Tem Certeza que gostaria de Efetuar a Compra?";
-     int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Confirmar",JOptionPane.YES_NO_OPTION);
-if ( opcao_escolhida == JOptionPane.YES_OPTION){
-
-CadastrarVenda();
-    String sql = "UPDATE softwaresokkyo.cadastro_peca SET `cadastroProd_qtd` = '"+nt3+"' WHERE `cadastroProd` = "+venda.getText();
-            try
-            {
-                softwaresokkyo.statement.executeUpdate(sql);
-            } catch (SQLException ex) {
-                Logger.getLogger(VendaProdutos.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-
-}
- else
-  return;
+     
 }//GEN-LAST:event_BConfirmarActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
@@ -498,32 +398,5 @@ nt0 = 0;
     private javax.swing.JTextField vtotal;
     private javax.swing.JTextField vvalor;
     // End of variables declaration//GEN-END:variables
-public void mostrar_dados(){
-        try{
 
-                pnome.setText(softwaresokkyo.resultset.getString("cadastroProdnome"));
-          vvalor.setText(softwaresokkyo.resultset.getString("cadastroProd_preco"));
-          jLabel50.setText(softwaresokkyo.resultset.getString("cadastroProd_qtd"));
-
-            }
-            catch(SQLException erro){
-
-            }
-    }
-
-public void CadastrarVenda()
-{
-try {
-
-
- String sql_insrt ="INSERT INTO venda_produto(venda_nome, venda_codpe, venda_codcli, venda_qtd, venda_valor, venda_toal, venda_nomePeca, dataVenda, vendedor ) values ('"+pnome1.getText()+"','"+venda.getText()+"','"+vcodigocli.getText()+"','"+vqtd.getText()+"','"+vvalor.getText()+"','"+vtotal.getText()+"','"+pnome.getText()+"','"+venda1.getText()+"','"+vendedor.getText()+"')";
-softwaresokkyo.statement.executeUpdate(sql_insrt);
-JOptionPane.showMessageDialog(null,"Venda Efetuada e Cadastrada Com Sucesso!");
-
-}
-
- catch(SQLException erros){
-     JOptionPane.showMessageDialog(null,"Erro Ao Gravar Dados! Por Favor Digite Novamente:  "+erros);
- }
-}
 }
