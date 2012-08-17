@@ -1,7 +1,7 @@
 
 package br.com.sokkyo.view.reportar;
 
-import com.Sokkyo.Ajuda.*;
+import br.com.sokkyo.view.ajuda.SendMail;
 import javax.swing.JOptionPane;
 
  /**

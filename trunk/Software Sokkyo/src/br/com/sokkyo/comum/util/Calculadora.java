@@ -1,6 +1,5 @@
 package br.com.sokkyo.comum.util;
 
-import com.Sokkyo.Utilitarios.Calculadora.*;
 
 public class Calculadora extends javax.swing.JFrame {
 
@@ -223,8 +222,9 @@ public class Calculadora extends javax.swing.JFrame {
             }
         });
 
-        jButton20.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton20.setToolTipText("BackSpace");
+        jButton20.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jButton20.setText("CL");
+        jButton20.setToolTipText("CL");
         jButton20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton20ActionPerformed(evt);

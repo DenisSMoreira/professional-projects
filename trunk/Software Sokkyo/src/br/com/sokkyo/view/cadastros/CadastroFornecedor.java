@@ -1,33 +1,12 @@
 package br.com.sokkyo.view.cadastros;
 
-import com.Sokkyo.Cadastros.*;
-import com.Sokkyo.Consulta.Consulta_Fornecedor;
-import com.Sokkyo.Utilitarios.Conexão.Conexão;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
 public final class CadastroFornecedor extends javax.swing.JFrame {
 
- public int navega = 0;
- Conexão software_Sokkyo;
-   
-    public CadastroFornecedor()
-{
-initComponents();
-software_Sokkyo = new Conexão();
-software_Sokkyo.conecta();
-try{
- PreencherDados();
-            software_Sokkyo.resultset.first();
-            mostrar_dados();
-            navega = 1; }
-catch(Exception e){
+    public CadastroFornecedor() {
+        initComponents();
 
-}
+    }
 
-}
-  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -245,11 +224,19 @@ catch(Exception e){
         jLabel2.setText("UF");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 20, 20));
 
-        tel.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(0##) ####.####")));
+        try {
+            tel.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(0##) ####.####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         tel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel1.add(tel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 130, -1));
 
-        cep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
+        try {
+            cep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         cep.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanel1.add(cep, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 100, 20));
 
@@ -382,147 +369,45 @@ catch(Exception e){
     }// </editor-fold>//GEN-END:initComponents
 
     private void fonomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fonomeActionPerformed
-   
 }//GEN-LAST:event_fonomeActionPerformed
 
     private void ProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProximoActionPerformed
-  try{
-      software_Sokkyo.resultset.next();
-       mostrar_dados();
-         navega =2;
-
-            }
-            catch(SQLException erro){
-              JOptionPane.showMessageDialog(null,"Nao foi Possivel ir para o Proximo Resgitro! ");
-            }
-   
 }//GEN-LAST:event_ProximoActionPerformed
 
     private void AnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnteriorActionPerformed
-
-        try{
-               software_Sokkyo.resultset.previous();
-               mostrar_dados();
-               navega =1;
-            }
-            catch(SQLException erro){
-              JOptionPane.showMessageDialog(null,"Nao Foi Possivel ir para o Registro Anterior");
-            }
-
 }//GEN-LAST:event_AnteriorActionPerformed
 
     private void PrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrimeiroActionPerformed
- try{
-          software_Sokkyo.resultset.first();
-            mostrar_dados();
-             navega = 1;
-
-        } catch(SQLException erro){
-            JOptionPane.showMessageDialog(null,"Nao localizou dados!");
-        }
 }//GEN-LAST:event_PrimeiroActionPerformed
 
     private void UltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UltimoActionPerformed
-  try{
-      software_Sokkyo.resultset.last();
-            mostrar_dados();
- navega = 2;
-        } catch(SQLException erro){
-            JOptionPane.showMessageDialog(null,"Nao localizou dados! ");
-        }
 }//GEN-LAST:event_UltimoActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
- new Consulta_Fornecedor().show();
-
 }//GEN-LAST:event_jButton7ActionPerformed
 
-
 //GEN-FIRST:event_jButton13MouseClicked
-
 //GEN-LAST:event_jButton13MouseClicked
-
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-      try {
-
- software_Sokkyo.executeSQL("select * from cadastro_fornecedor");
-
- String sqlinsert ="INSERT INTO cadastro_fornecedor (`cadastroFor_nome`, `cadastroFor_end`, `cadastroFor_numero`, `cadastroFor_est`, `cadastroFor_tel`, `cadastroFor_cep`, `cadastro_bairro`, `cadastro_cnpj`, `cadastro_inscricao`, `cadastro_email`, `cadastro_web`) values ('"+fonome.getText()+"','"+foendereço.getText()+"','"+jTextField2.getText()+"','"+jComboBox1.getSelectedItem()+"','"+tel.getText()+"','"+cep.getText()+"','"+bairro.getText()+"','"+cnpj.getText()+"','"+inscricao.getText()+"','"+email.getText()+"','"+web.getText()+"')";
-
-software_Sokkyo.statement.executeUpdate(sqlinsert);
-JOptionPane.showMessageDialog(null,"Fornecedor Cadastrado Com Sucesso!");
- PreencherDados();
-            software_Sokkyo.resultset.last();
-            mostrar_dados();
-            navega = 2;
-}
-
- catch(SQLException erros){
-     JOptionPane.showMessageDialog(null,"Erro Ao Gravar Dados! Por Favor Digite Novamente!"+erros);
- }
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-      dispose();
+        dispose();
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-try{
-        String sql ="select * FROM cadastro_fornecedor WHERE `cadastroFor_codig` = "+focodigo.getText();
-software_Sokkyo.executeSQL(sql);
-software_Sokkyo.resultset.first();
-String nome = "Tem Certeza Deseja Excluir o Fornecedor:  "+software_Sokkyo.resultset.getString("cadastroFor_nome")+" ?";
-int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome," Exclusão",JOptionPane.YES_NO_OPTION);
-
-if ( opcao_escolhida == JOptionPane.YES_OPTION){
-
-sql = "DELETE FROM softwaresokkyo.cadastro_fornecedor WHERE `cadastroFor_codig` = "+focodigo.getText();
-int conseguiu_excluir = software_Sokkyo.statement.executeUpdate(sql);
-if (conseguiu_excluir == 1){
-
-JOptionPane.showMessageDialog(null,"Esclusão realizada com sucesso! ");
- PreencherDados();
-            software_Sokkyo.resultset.first();
-            mostrar_dados();
-            navega = 1;
-}
-}
-
-else{
- return;
-    }
-  }
-catch (SQLException erro)
-{
-JOptionPane.showMessageDialog(null,"Erro ao Excluir o Registro");
-}
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        try{
-
-            String sql = "UPDATE softwaresokkyo.cadastro_fornecedor SET `cadastroFor_nome` = '"+fonome.getText()+"', `cadastroFor_end` = '"+foendereço.getText()+"', `cadastroFor_numero` = '"+jTextField2.getText()+"', `cadastroFor_est` = '"+jComboBox1.getSelectedItem()+"', `cadastroFor_tel` = '"+tel.getText()+"', `cadastroFor_cep` = '"+cep.getText()+"', `cadastro_bairro` = '"+bairro.getText()+"',`cadastro_cnpj`= '"+cnpj.getText()+"', `cadastro_inscricao` = '"+inscricao.getText()+"', `cadastro_email` = '"+email.getText()+"', `cadastro_web` = '"+web.getText()+"' WHERE `cadastroFor_codig` = "+focodigo.getText();
-            software_Sokkyo.statement.executeUpdate(sql);
-            JOptionPane.showMessageDialog(null,"Alteraçao realizada com sucesso!");
-
-             PreencherDados();
-            software_Sokkyo.resultset.first();
-            mostrar_dados();
-            navega = 1;
-        }
-
-        catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null,"Erro a Tentar Alterar o registro..");
-        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-  fonome.setText("");
-       focodigo.setText("");
-       foendereço.setText("");
-       tel.setText("");
-       jTextField2.setText("");
-       cep.setText("");
+        fonome.setText("");
+        focodigo.setText("");
+        foendereço.setText("");
+        tel.setText("");
+        jTextField2.setText("");
+        cep.setText("");
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton15FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton15FocusLost
@@ -534,52 +419,40 @@ JOptionPane.showMessageDialog(null,"Erro ao Excluir o Registro");
     }//GEN-LAST:event_webActionPerformed
 
     private void PrimeiroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PrimeiroMouseEntered
- 
     }//GEN-LAST:event_PrimeiroMouseEntered
 
     private void PrimeiroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PrimeiroMouseExited
-
     }//GEN-LAST:event_PrimeiroMouseExited
 
     private void UltimoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UltimoMouseEntered
-
     }//GEN-LAST:event_UltimoMouseEntered
 
     private void UltimoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UltimoMouseExited
-  
     }//GEN-LAST:event_UltimoMouseExited
 
     private void ProximoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProximoMouseEntered
-
     }//GEN-LAST:event_ProximoMouseEntered
 
     private void ProximoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProximoMouseExited
- 
     }//GEN-LAST:event_ProximoMouseExited
 
     private void AnteriorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnteriorMouseEntered
-
-    
     }//GEN-LAST:event_AnteriorMouseEntered
 
     private void AnteriorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnteriorMouseExited
-
-      
     }//GEN-LAST:event_AnteriorMouseExited
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
-          
             @Override
             public void run() {
                 new CadastroFornecedor().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Anterior;
     private javax.swing.JButton Primeiro;
@@ -625,47 +498,4 @@ JOptionPane.showMessageDialog(null,"Erro ao Excluir o Registro");
     private javax.swing.JFormattedTextField tel;
     private javax.swing.JTextField web;
     // End of variables declaration//GEN-END:variables
- public void PreencherDados(){
-  software_Sokkyo.executeSQL("select * from cadastro_fornecedor");
-    DefaultTableModel modelo = (DefaultTableModel)jTable1.getModel();
-    modelo.setNumRows(0);
-    try{
-        while (software_Sokkyo.resultset.next())
-            modelo.addRow(new Object[]{software_Sokkyo.resultset.getString("cadastroFor_codig"),software_Sokkyo.resultset.getString("cadastroFor_nome"),software_Sokkyo.resultset.getString("cadastroFor_tel")});
-
-        }
-    catch (SQLException erro){
-        JOptionPane.showMessageDialog(null,"Erro Ao Aprensentar Dados na Tabela");
-    }
-
-}
-    public void mostrar_dados() throws SQLException{
-        try{
-
-                 fonome.setText(software_Sokkyo.resultset.getString("cadastroFor_nome"));
-               focodigo.setText(software_Sokkyo.resultset.getString("cadastroFor_codig"));
-              foendereço.setText(software_Sokkyo.resultset.getString("cadastroFor_end"));
-              tel.setText(software_Sokkyo.resultset.getString("cadastroFor_tel"));
-              jTextField2.setText(software_Sokkyo.resultset.getString("cadastroFor_numero"));
-               jComboBox1.setSelectedItem(software_Sokkyo.resultset.getString("cadastroFor_est"));
-                  cep.setText(software_Sokkyo.resultset.getString("cadastroFor_cep"));
-                    bairro.setText(software_Sokkyo.resultset.getString("cadastro_bairro"));
-                    cnpj.setText(software_Sokkyo.resultset.getString("cadastro_cnpj"));
-                    inscricao.setText(software_Sokkyo.resultset.getString("cadastro_inscricao"));
-                    email.setText(software_Sokkyo.resultset.getString("cadastro_email"));
-                    web.setText(software_Sokkyo.resultset.getString("cadastro_web"));
-            }
-            catch(SQLException erro){
-               if (navega == 1){
-                    JOptionPane.showMessageDialog(null, "Voçê jà Está no Primeiro Registro");
-                  software_Sokkyo.resultset.next();
-               }
-                else if(navega == 2){
-                    JOptionPane.showMessageDialog(null, "Voçê jà Está no Ultimo Registro");
-                     software_Sokkyo.resultset.previous();
-                  }
-                else
-                  navega = 0;
-            }
-    }
 }

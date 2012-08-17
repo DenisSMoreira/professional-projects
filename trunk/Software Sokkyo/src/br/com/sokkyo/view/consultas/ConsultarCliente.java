@@ -1,47 +1,15 @@
-
-
 package br.com.sokkyo.view.consultas;
-import com.Sokkyo.Consulta.*;
-import com.Sokkyo.Cadastros.Cadastro_de_Clientes;
-import com.Sokkyo.Utilitarios.Conexão.Conexão;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
-
-
 
 public final class ConsultarCliente extends javax.swing.JFrame {
-      Conexão software_sokkyo;
-       private  String sexualidade = "";
-  
-    public ConsultarCliente()
-    {
+
+    private String sexualidade = "";
+
+    public ConsultarCliente() {
         initComponents();
-         software_sokkyo = new Conexão();
-        software_sokkyo.conecta();
-        software_sokkyo.executeSQL("select * from cadastro_cliente");
 
 
-        try
-        {
-       
-       while(software_sokkyo.resultset.next())
-       PesquiBox.addItem(software_sokkyo.resultset.getString("cadastro_nome"));
+    }
 
-        }
-        catch (SQLException e)
-        {
-
-
-        }
-    
-     }
-
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -624,70 +592,36 @@ public final class ConsultarCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PesquiBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_PesquiBoxItemStateChanged
-  software_sokkyo.executeSQL("select * from cadastro_cliente");
-        try {
-            software_sokkyo.resultset.first();
-
-String igual ="n";
-while ( igual == "n"){
-
-if(software_sokkyo.resultset.getString("cadastro_nome").equals(PesquiBox.getSelectedItem()))
-
-{
-igual = "s";
-}
-else
-software_sokkyo.resultset.next();
-}
-codigo1.setText(software_sokkyo.resultset.getString("codigo_cliente"));
-mostrar_dados();
-PreencherDados();
-PreencherDados2();
-PreencherDados3();
-software_sokkyo.executeSQL("select * from cadastro_cliente");
-        }
-catch (SQLException ex) {
-            Logger.getLogger(ConsultarCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
     }//GEN-LAST:event_PesquiBoxItemStateChanged
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-String senha = JOptionPane.showInputDialog("Login","Digite a Senha:");
-        if(senha.equals("admin")){
-        new Cadastro_de_Clientes().show();
-  dispose();}
- else{
-    JOptionPane.showMessageDialog(null,"Acesso Negado");
- }
 }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton5FocusLost
-
 }//GEN-LAST:event_jButton5FocusLost
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
 
-BuscaNome.setText("");
-buscaCPF.setText("");
-nome.setText("");
-codigo1.setText("");
-endereco.setText("");
-cep.setText("");
-bairro.setText("");
-numero.setText("");
-cidade.setText("");
- telefone.setText("");
- celular.setText("");
- rg.setText("");
- cpf.setText("");
- nascimento.setText("");
- email.setText("");
- site.setText("");
+        BuscaNome.setText("");
+        buscaCPF.setText("");
+        nome.setText("");
+        codigo1.setText("");
+        endereco.setText("");
+        cep.setText("");
+        bairro.setText("");
+        numero.setText("");
+        cidade.setText("");
+        telefone.setText("");
+        celular.setText("");
+        rg.setText("");
+        cpf.setText("");
+        nascimento.setText("");
+        email.setText("");
+        site.setText("");
 }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-     dispose();
+        dispose();
 }//GEN-LAST:event_jButton7ActionPerformed
 
     private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
@@ -695,11 +629,9 @@ cidade.setText("");
 }//GEN-LAST:event_nomeActionPerformed
 
     private void nomeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nomeFocusLost
-
 }//GEN-LAST:event_nomeFocusLost
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-
 }//GEN-LAST:event_jLabel2MouseClicked
 
     private void masculinoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_masculinoItemStateChanged
@@ -711,92 +643,14 @@ cidade.setText("");
 }//GEN-LAST:event_femininoItemStateChanged
 
     private void femininoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_femininoActionPerformed
-       
 }//GEN-LAST:event_femininoActionPerformed
 
     private void BuscaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscaNomeActionPerformed
-        software_sokkyo.executeSQL("select * from cadastro_cliente");
-        if (BuscaNome.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Por Favor Digite o Nome Do Cliente Desejado!");
-            return;
-        } else {
-            try {
-
-                software_sokkyo.resultset.first();
-
-                String igual = "n";
-
-                int tamanho_pesquisa = BuscaNome.getText().length();
-
-                while (igual == "n") {
-
-                    String pesquisando = software_sokkyo.resultset.getString("cadastro_nome").substring(0, (tamanho_pesquisa));
-
-                    if (pesquisando.equals(BuscaNome.getText())) {
-                        igual = "s";
-                    } else {
-                        software_sokkyo.resultset.next();
-                    }
-
-                }
-
-
-                codigo1.setText(software_sokkyo.resultset.getString("codigo_cliente"));
-                mostrar_dados();
-
-
-
-            } catch (SQLException erro) {
-                JOptionPane.showMessageDialog(null, "Nao Foi Localizado os Dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
-            }
-        }
 }//GEN-LAST:event_BuscaNomeActionPerformed
 
     private void buscaCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscaCPFActionPerformed
-        software_sokkyo.executeSQL("select * from cadastro_cliente");
-        if (buscaCPF.getText().equals("")){
-            JOptionPane.showMessageDialog(null,"Por Favor Digite o RG Do Cliente Desejado!");
-            return;
-        } else
-
-
-
-            try	{
-
-                software_sokkyo.resultset.first();
-
-                String igual ="n";
-
-                int tamanho_pesquisa = buscaCPF.getText().length();
-
-                while ( igual == "n") {
-
-                    String pesquisando = software_sokkyo.resultset.getString("cadastro_rg").substring(0,(tamanho_pesquisa));
-
-                    if(pesquisando.equals(buscaCPF.getText()))
-
-                    {
-                        igual = "s";
-                    }
-
-                    else
-
-                        software_sokkyo.resultset.next();
-
-                }
-
-
-                codigo1.setText(software_sokkyo.resultset.getString("codigo_cliente"));
-                mostrar_dados();
-
-
-
-            } catch(SQLException erro) {
-                JOptionPane.showMessageDialog(null,"Nao foi localizado os dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
-            }
 }//GEN-LAST:event_buscaCPFActionPerformed
 
-   
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
@@ -805,7 +659,6 @@ cidade.setText("");
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField BuscaNome;
     private javax.swing.JComboBox PesquiBox;
@@ -878,92 +731,4 @@ cidade.setText("");
     private javax.swing.JFormattedTextField telefone;
     private javax.swing.JComboBox uf;
     // End of variables declaration//GEN-END:variables
- public void mostrar_dados() throws SQLException{
-   try{
-     codigo1.setText(software_sokkyo.resultset.getString("codigo_cliente"));
-nome.setText(software_sokkyo.resultset.getString("cadastro_nome"));
-endereco.setText(software_sokkyo.resultset.getString("cadastro_endereco"));
-cep.setText(software_sokkyo.resultset.getString("cadastro_cep"));
-bairro.setText(software_sokkyo.resultset.getString("cadastro_bairro"));
-numero.setText(software_sokkyo.resultset.getString("cadastro_n"));
-cidade.setText(software_sokkyo.resultset.getString("cadastro_cidade"));
- telefone.setText(software_sokkyo.resultset.getString("cadastro_tel"));
- celular.setText(software_sokkyo.resultset.getString("cadastro_celu"));
- rg.setText(software_sokkyo.resultset.getString("cadastro_rg"));
- cpf.setText(software_sokkyo.resultset.getString("cadastro_cpf"));
- nascimento.setText(software_sokkyo.resultset.getString("cadastro_data"));
- email.setText(software_sokkyo.resultset.getString("email"));
- site.setText(software_sokkyo.resultset.getString("site"));
- uf.setSelectedItem(software_sokkyo.resultset.getString("cadastro_estado"));
- estadocivil.setSelectedItem(software_sokkyo.resultset.getString("estado_civil"));
- residencia.setSelectedItem(software_sokkyo.resultset.getString("residencia"));
- registro.setText(software_sokkyo.resultset.getString("cadastro_dataReg"));
-fotux.setIcon(new ImageIcon(""+software_sokkyo.resultset.getString("foto")));
-sexualidade= software_sokkyo.resultset.getString("sexo");
-if ( sexualidade.equals("Feminino")){
-    feminino.setSelected(rootPaneCheckingEnabled);
-}
- else {
-    masculino.setSelected(rootPaneCheckingEnabled);
- }
-   }
- catch(SQLException erro){
-
-
-
- }}
-public void AtualizarCombo(){
-     try {
-            while (software_sokkyo.resultset.next())
-            PesquiBox.addItem(software_sokkyo.resultset.getString("cadastro_nome"));
-
-        } catch (SQLException ex) {
-            Logger.getLogger(ConsultarCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-}
-
-
-
-public void PreencherDados(){
-    software_sokkyo.executeSQL("select * from venda_produto WHERE venda_codcli = "+codigo1.getText()+"");
-
-    DefaultTableModel modelo = (DefaultTableModel)jTable1.getModel();
-    modelo.setNumRows(0);
-    try{
-        while (software_sokkyo.resultset.next())
-            modelo.addRow(new Object[]{software_sokkyo.resultset.getString("venda_codVenda"),software_sokkyo.resultset.getString("venda_nomePeca"),software_sokkyo.resultset.getString("venda_codpe"),software_sokkyo.resultset.getString("venda_qtd"),software_sokkyo.resultset.getString("venda_valor"),software_sokkyo.resultset.getString("venda_toal"),software_sokkyo.resultset.getString("dataVenda"),software_sokkyo.resultset.getString("vendedor")});
-
-        }
-    catch (SQLException erro){
-       System.out.print(erro);
-    }
-}
-public void PreencherDados2(){
-    software_sokkyo.executeSQL("select * from venda_servico WHERE codicli = "+codigo1.getText()+"");
-
-    DefaultTableModel model = (DefaultTableModel)jTable2.getModel();
-    model.setNumRows(0);
-    try{
-        while (software_sokkyo.resultset.next())
-            model.addRow(new Object[]{software_sokkyo.resultset.getString("venda_codigo"),software_sokkyo.resultset.getString("descri"),software_sokkyo.resultset.getString("modelo"),software_sokkyo.resultset.getString("placa"),software_sokkyo.resultset.getString("dias"),software_sokkyo.resultset.getString("preco"),software_sokkyo.resultset.getString("data")});
-
-        }
-    catch (SQLException erro){
-       JOptionPane.showMessageDialog(null,"Erro "+erro);
-    }
-}
-public void PreencherDados3(){
-    software_sokkyo.executeSQL("select * from venda_prodserv WHERE cod_cliente = "+codigo1.getText()+"");
-
-    DefaultTableModel mod = (DefaultTableModel)jTable3.getModel();
-    mod.setNumRows(0);
-    try{
-        while (software_sokkyo.resultset.next())
-            mod.addRow(new Object[]{software_sokkyo.resultset.getString("codigo_VendaServProd"),software_sokkyo.resultset.getString("cod_peca"),software_sokkyo.resultset.getString("qtd"),software_sokkyo.resultset.getString("valor_peca"),software_sokkyo.resultset.getString("placa"),software_sokkyo.resultset.getString("previsao"),software_sokkyo.resultset.getString("descricao"),software_sokkyo.resultset.getString("valor_or"),software_sokkyo.resultset.getString("vendedor"),software_sokkyo.resultset.getString("total")});
-
-        }
-    catch (SQLException erro){
-    System.out.print(erro);
-    }
-}
 }

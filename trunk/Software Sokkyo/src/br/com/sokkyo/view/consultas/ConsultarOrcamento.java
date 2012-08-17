@@ -11,24 +11,15 @@
 
 package br.com.sokkyo.view.consultas;
 
-import com.Sokkyo.Consulta.*;
-import com.Sokkyo.Cadastros.Cadastro_Orcamento;
-import com.Sokkyo.Utilitarios.Conexão.Conexão;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author Administrador
  */
 public class ConsultarOrcamento extends javax.swing.JFrame {
-     Conexão softwaresokkyo;
+   
     /** Creates new form ConsultarOrcamento */
     public ConsultarOrcamento() {
         initComponents();
-         softwaresokkyo = new Conexão();
-        softwaresokkyo.conecta();
     }
 
     /** This method is called from within the constructor to
@@ -533,18 +524,5 @@ public class ConsultarOrcamento extends javax.swing.JFrame {
     private javax.swing.JTextField vtotal;
     private javax.swing.JTextField vvalor;
     // End of variables declaration//GEN-END:variables
-public void PreencherDados(){
-    softwaresokkyo.executeSQL("select * from cadastro_orcamento WHERE codigoCliente = "+jTextField3.getText()+"");
 
-    DefaultTableModel modelo = (DefaultTableModel)jTable1.getModel();
-    modelo.setNumRows(0);
-    try{
-        while (softwaresokkyo.resultset.next())
-            modelo.addRow(new Object[]{softwaresokkyo.resultset.getString("nomePeca"),softwaresokkyo.resultset.getString("quantidade"),softwaresokkyo.resultset.getString("valor"),softwaresokkyo.resultset.getString("total"),softwaresokkyo.resultset.getString("valorOrcamento")});
-
-        }
-    catch (SQLException erro){
-        JOptionPane.showMessageDialog(null,"Erro Ao Aprensentar Dados na Tabela!");
-    }
-}
 }
