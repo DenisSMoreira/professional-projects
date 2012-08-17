@@ -11,7 +11,6 @@
 
 package br.com.sokkyo.view.home;
 
-import com.Sokkyo.ControleGeral.CriarAtalho.*;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;

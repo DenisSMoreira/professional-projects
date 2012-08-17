@@ -2,31 +2,29 @@
 package br.com.sokkyo.view.home;
 
 
-import com.Sokkyo.ControleGeral.*;
-import com.Sokkyo.ControleGeral.CriarAtalho.CriarAtalho;
-import com.Sokkyo.Login.Acesso.Login;
-import com.Sokkyo.Ajuda.Ajuda;
-import com.Sokkyo.Ajuda.Reportar;
-import com.Sokkyo.Cadastros.Cadasto_Funcionario;
-import com.Sokkyo.Cadastros.Cadastro_Fornecedor;
-import com.Sokkyo.Cadastros.Cadastro_Orcamento;
-import com.Sokkyo.Cadastros.Cadastro_Peça;
-import com.Sokkyo.Cadastros.Cadastro_de_Clientes;
-import com.Sokkyo.Consulta.Consulta_Cliente;
-import com.Sokkyo.Consulta.Consulta_Fornecedor;
-import com.Sokkyo.Consulta.Consulta_Orcamento;
-import com.Sokkyo.Consulta.Consulta_Pecas;
-import com.Sokkyo.FecharCaixa.ControleCaixa;
-import com.Sokkyo.Utilitarios.LookAndFeel.LookAndFeel;
-import com.Sokkyo.Utilitarios.Data.data;
-import com.Sokkyo.Venda.Venda_ProdServ;
-import com.Sokkyo.Venda.Venda_Produto;
-import com.Sokkyo.Venda.Venda_Servico;
+import br.com.sokkyo.comum.util.Calculadora;
+import br.com.sokkyo.comum.util.DataUtil;
+import br.com.sokkyo.comum.util.LookAndFeel;
+import br.com.sokkyo.view.ajuda.MenuAjuda;
+import br.com.sokkyo.view.cadastros.CadastoFuncionario;
+import br.com.sokkyo.view.cadastros.CadastroCliente;
+import br.com.sokkyo.view.cadastros.CadastroFornecedor;
+import br.com.sokkyo.view.cadastros.CadastroOrcamento;
+import br.com.sokkyo.view.cadastros.CadastroPeca;
+import br.com.sokkyo.view.caixa.ControleCaixa;
+import br.com.sokkyo.view.consultas.ConsultarCliente;
+import br.com.sokkyo.view.consultas.ConsultarFornecedor;
+import br.com.sokkyo.view.consultas.ConsultarOrcamento;
+import br.com.sokkyo.view.consultas.ConsultarPecas;
+import br.com.sokkyo.view.login.Autenticacao;
+import br.com.sokkyo.view.reportar.Reportar;
+import br.com.sokkyo.view.venda.VendaCompleta;
+import br.com.sokkyo.view.venda.VendaProdutos;
+import br.com.sokkyo.view.venda.VendaServico;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
 
 
 /**
@@ -35,15 +33,14 @@ import javax.swing.ImageIcon;
  */
 public class ControleHome extends javax.swing.JFrame {
   LookAndFeel L = new LookAndFeel();
-  ControleGeral_Metodos C = new ControleGeral_Metodos();
-  data mostra_data = new data();
+  DataUtil mostra_data = new DataUtil();
 
   public ControleHome(String text) {
 
           initComponents();
           nome.setText(text);
           acesso();
-          L.LookAndFeelHifi(this);
+          L.lookAndFeelHifi(this);
        jInternalFrame1.setLocation(getSize().width-250, getSize().height-400);
        mostra_data.le_data();
        Label_Data1.setText(""+mostra_data.dia_semana+",  "+mostra_data.dia+"  de  "+mostra_data.mes+"  de  "+mostra_data.ano);
@@ -107,10 +104,7 @@ public class ControleHome extends javax.swing.JFrame {
     jMenuItem19.setEnabled(false);
     jMenuItem37.setEnabled(false);
       }
- else
- {
- return;
- }
+
   }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -1081,45 +1075,45 @@ public class ControleHome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menu_clieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_clieActionPerformed
-Cadastro_de_Clientes cadastro_de_Clientes = new Cadastro_de_Clientes();
+CadastroCliente cadastro_de_Clientes = new CadastroCliente();
       cadastro_de_Clientes.setVisible(true);
       cadastro_de_Clientes.repaint();
     }//GEN-LAST:event_menu_clieActionPerformed
 
     private void menu_pecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_pecaActionPerformed
-    new Cadastro_Peça().show();
+    new CadastroPeca().show();
     }//GEN-LAST:event_menu_pecaActionPerformed
 
     private void menu_funActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_funActionPerformed
-        new Cadasto_Funcionario().show();
+        new CadastoFuncionario().show();
     }//GEN-LAST:event_menu_funActionPerformed
 
     private void cadastrar_funActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrar_funActionPerformed
-       new Cadasto_Funcionario().show();
+       new CadastoFuncionario().show();
     }//GEN-LAST:event_cadastrar_funActionPerformed
 
     private void consultar_PecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_PecaActionPerformed
-  new Consulta_Pecas().show();        // TODO add your handling code here:
+  new ConsultarPecas().show();        // TODO add your handling code here:
     }//GEN-LAST:event_consultar_PecaActionPerformed
 
     private void consultar_fornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_fornecedorActionPerformed
- new Consulta_Fornecedor().show();
+ new ConsultarFornecedor().show();
     }//GEN-LAST:event_consultar_fornecedorActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
- new Venda_Produto(nome.getText()).show();        // TODO add your handling code here:
+ new VendaProdutos(nome.getText()).show();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
- new Venda_Servico().show();        // TODO add your handling code here:
+ new VendaServico().show();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-      new Venda_ProdServ().show();
+      new VendaCompleta().show();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-new com.Sokkyo.Utilitarios.Calculadora.Calculadora().show();        // TODO add your handling code here:
+new Calculadora().show();        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
@@ -1151,31 +1145,31 @@ System.exit(0);
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void menu_forActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_forActionPerformed
- new Cadastro_Fornecedor().show();       
+ new ConsultarFornecedor().show();       
     }//GEN-LAST:event_menu_forActionPerformed
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
- new Venda_Servico().show();      
+ new VendaServico().show();      
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-  new Venda_Produto(nome.getText()).show();
+  new VendaProdutos(nome.getText()).show();
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
-  new Venda_ProdServ().show();       
+  new VendaCompleta().show();       
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
-  new Consulta_Pecas().show();      
+  new ConsultarPecas().show();      
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
-  new Consulta_Orcamento().show();      
+  new ConsultarOrcamento().show();      
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     private void jMenuItem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem27ActionPerformed
- new Ajuda().show();    
+ new MenuAjuda().show();    
     }//GEN-LAST:event_jMenuItem27ActionPerformed
 
     private void jMenuItem28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem28ActionPerformed
@@ -1192,7 +1186,7 @@ System.exit(0);
     }//GEN-LAST:event_jMenuItem29ActionPerformed
 
     private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
-        new Consulta_Cliente().show();      
+        new ConsultarCliente().show();      
     }//GEN-LAST:event_jMenuItem19ActionPerformed
 
     private void jMenuItem29ActionPerformed1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem29ActionPerformed1
@@ -1206,56 +1200,56 @@ Label_hora.setText("Hora: "+mostra_data.hora);
     }//GEN-LAST:event_timer1OnTime
 
     private void jMenuItem25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem25ActionPerformed
-L.LookAndFeelLiquid(this);
-jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/pinguins.jpg")));
+L.lookAndFeelLiquid(this);
+jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/pinguins.jpg")));
 
     }//GEN-LAST:event_jMenuItem25ActionPerformed
 
     private void jMenuItem31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem31ActionPerformed
-jLabel1.setIcon(new ImageIcon(""+C.ChamarImagenDeFundo(this)));
+
     }//GEN-LAST:event_jMenuItem31ActionPerformed
 
     private void jMenuItem32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem32ActionPerformed
-L.LookAndFeelNimROD(this); 
-jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/Wallpaper_1280x800_001_by_CCC_pictuning.jpg")));
+L.lookAndFeelNimROD(this); 
+jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/Wallpaper_1280x800_001_by_CCC_pictuning.jpg")));
     }//GEN-LAST:event_jMenuItem32ActionPerformed
 
     private void jMenuItem30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem30ActionPerformed
-L.LookAndFeelAcryRed(this);       
+L.lookAndFeelAcryRed(this);       
     }//GEN-LAST:event_jMenuItem30ActionPerformed
 
     private void jMenuItem33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem33ActionPerformed
-L.LookAndFeelSmart(this);
-jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/machhaus.jpg")));
+L.lookAndFeelSmart(this);
+jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/machhaus.jpg")));
 
     }//GEN-LAST:event_jMenuItem33ActionPerformed
 
     private void jMenuItem26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem26ActionPerformed
-L.LookAndFeelAcry(this);
-jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/8686rock.jpg")));
+L.lookAndFeelAcry(this);
+jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/8686rock.jpg")));
     }//GEN-LAST:event_jMenuItem26ActionPerformed
 
     private void jMenuItem34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem34ActionPerformed
-      L.LookAndFeelHifi(this);
-jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/amanecer-hd-wallpaper-1280x800.jpeg")));
+      L.lookAndFeelHifi(this);
+jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/amanecer-hd-wallpaper-1280x800.jpeg")));
     }//GEN-LAST:event_jMenuItem34ActionPerformed
 
     private void jMenuItem35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem35ActionPerformed
-   L.LookAndFeelNoire(this); 
-jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/6166anjo.jpg")));
+   L.lookAndFeelNoire(this); 
+jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/6166anjo.jpg")));
     }//GEN-LAST:event_jMenuItem35ActionPerformed
 
     private void jMenuItem36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem36ActionPerformed
-      L.LookAndFeelLuna(this);
-       jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/10002abandonada.jpg")));
+      L.lookAndFeelLuna(this);
+       jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/10002abandonada.jpg")));
     }//GEN-LAST:event_jMenuItem36ActionPerformed
 
     private void jMenuItem37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem37ActionPerformed
-      new Consulta_Fornecedor().show();        
+      new ConsultarFornecedor().show();        
     }//GEN-LAST:event_jMenuItem37ActionPerformed
 
     private void menu_orcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_orcActionPerformed
-        new Cadastro_Orcamento().show();
+        new CadastroOrcamento().show();
     }//GEN-LAST:event_menu_orcActionPerformed
 
     private void WWWMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WWWMouseEntered
@@ -1275,7 +1269,7 @@ WWW.setForeground(Color.WHITE);
     }//GEN-LAST:event_WWWMouseClicked
 
     private void consultar_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_clienteActionPerformed
-   new Consulta_Cliente().show();
+   new ConsultarCliente().show();
     }//GEN-LAST:event_consultar_clienteActionPerformed
 
     private void consultar_clienteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_consultar_clienteFocusLost
@@ -1283,7 +1277,7 @@ WWW.setForeground(Color.WHITE);
 }//GEN-LAST:event_consultar_clienteFocusLost
 
     private void consultar_OSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_OSActionPerformed
-  new Consulta_Orcamento().show();   
+  new ConsultarOrcamento().show();   
     }//GEN-LAST:event_consultar_OSActionPerformed
 
     private void cadastrar_clieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrar_clieActionPerformed
@@ -1295,15 +1289,15 @@ WWW.setForeground(Color.WHITE);
     }//GEN-LAST:event_cadastrar_clieFocusLost
 
     private void cadastrar_pecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrar_pecaActionPerformed
-     new Cadastro_Peça().show();
+     new CadastroPeca().show();
     }//GEN-LAST:event_cadastrar_pecaActionPerformed
 
     private void cadastrar_forActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrar_forActionPerformed
-  new Cadastro_Fornecedor().show();
+  new CadastroFornecedor().show();
     }//GEN-LAST:event_cadastrar_forActionPerformed
 
     private void cadastrarrrrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarrrrActionPerformed
- new Cadastro_Orcamento().show();        // TODO add your handling code here:
+ new CadastroOrcamento().show();        // TODO add your handling code here:
     }//GEN-LAST:event_cadastrarrrrActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
@@ -1315,7 +1309,7 @@ WWW.setForeground(Color.WHITE);
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
- new Login().setVisible(true);
+ new Autenticacao().setVisible(true);
 dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
@@ -1328,7 +1322,7 @@ dispose();
     }//GEN-LAST:event_consultar_fornecedor2ActionPerformed
 
     private void cadastrar_clieMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrar_clieMousePressed
-new Cadastro_de_Clientes().show();
+new CadastroCliente().show();
     }//GEN-LAST:event_cadastrar_clieMousePressed
 
     private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
@@ -1342,11 +1336,11 @@ new Cadastro_de_Clientes().show();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-      new Ajuda().show();
+      new MenuAjuda().show();
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-jLabel1.setIcon(new ImageIcon(""+C.ChamarImagenDeFundo(this))); 
+
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed

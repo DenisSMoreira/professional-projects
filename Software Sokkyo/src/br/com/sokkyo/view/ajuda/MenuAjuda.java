@@ -1,7 +1,6 @@
 
 package br.com.sokkyo.view.ajuda;
 
-import com.Sokkyo.Ajuda.*;
 
 
 public class MenuAjuda extends javax.swing.JFrame {
@@ -39,7 +38,7 @@ public class MenuAjuda extends javax.swing.JFrame {
         setTitle("Ajuda");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/7857_16x16.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/7857_16x16.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -47,7 +46,7 @@ public class MenuAjuda extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/7855_16x16.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/7855_16x16.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -138,11 +137,11 @@ public class MenuAjuda extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 42, 590, 390));
 
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/print_icon.gif"))); // NOI18N
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/print_icon.gif"))); // NOI18N
         getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 70, -1));
 
         jButton12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/Icons/tooltip.png"))); // NOI18N
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/tooltip.png"))); // NOI18N
         jButton12.setText(" Home");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

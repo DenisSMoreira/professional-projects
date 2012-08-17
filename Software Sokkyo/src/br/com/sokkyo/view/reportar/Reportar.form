@@ -64,7 +64,7 @@
                       <Component id="jLabel1" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="email" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="14" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -193,7 +193,7 @@
                               <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="17" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="assunto" alignment="0" min="0" pref="0" max="32767" attributes="1"/>
                               <Component id="jTextField2" alignment="0" pref="158" max="32767" attributes="1"/>

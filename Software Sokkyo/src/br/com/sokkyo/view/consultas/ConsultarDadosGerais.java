@@ -11,7 +11,6 @@
 
 package br.com.sokkyo.view.consultas;
 
-import com.Sokkyo.Consulta.*;
 
 /**
  *

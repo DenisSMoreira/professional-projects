@@ -5,15 +5,14 @@
 
 package br.com.sokkyo.view.ajuda;
 
-import com.Sokkyo.Ajuda.*;
 import java.util.Properties;
+import javax.mail.Authenticator;
 import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.mail.Authenticator;
-import javax.mail.PasswordAuthentication;
 
 
 //clase que retorna uma autenticacao para ser enviada e verificada pelo servidor smtp
@@ -34,7 +33,7 @@ public class SendMail {
 	 * caso queira mudar o servidor e a porta, so enviar para o contrutor
 	 * os valor como string
 	 */
-	SendMail(String mailSMTPServer, String mailSMTPServerPort) { //Para outro Servidor
+	public SendMail(String mailSMTPServer, String mailSMTPServerPort) { //Para outro Servidor
 		this.mailSMTPServer = mailSMTPServer;
 		this.mailSMTPServerPort = mailSMTPServerPort;
 	}

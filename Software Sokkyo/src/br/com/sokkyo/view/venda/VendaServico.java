@@ -11,25 +11,16 @@
 
 package br.com.sokkyo.view.venda;
 
-import com.Sokkyo.Venda.*;
-import javax.swing.JOptionPane;
-import com.Sokkyo.Utilitarios.Conexão.Conexão;
-import java.sql.SQLException;
 import java.util.Date;
 /**
  *
  * @author Administrador
  */
 public class VendaServico extends javax.swing.JFrame {
- Conexão software_Sokkyo;
     /** Creates new form VendaServico */
     public VendaServico() {
         initComponents();
-        software_Sokkyo = new Conexão();
-software_Sokkyo.conecta();
-
-software_Sokkyo.executeSQL("select * from cadastro_fornecedor");
-  Date data = new Date();
+       Date data = new Date();
  datae.setText(""+data.getDate()+"/"+data.getMonth()+"/"+(data.getYear()-100));
     }
 
@@ -249,67 +240,11 @@ software_Sokkyo.executeSQL("select * from cadastro_fornecedor");
 }//GEN-LAST:event_jButton15FocusLost
 
     private void BConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BConfirmarActionPerformed
- String nome = "Tem Certeza que gostaria de Efetuar a Venda de Serviço?";
-     int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Confirmar",JOptionPane.YES_NO_OPTION);
-if ( opcao_escolhida == JOptionPane.YES_OPTION){
-        try {
- software_Sokkyo.executeSQL("select * from venda_servico");
-
- String sqlinsert ="INSERT INTO venda_servico (`nome`, `codicli`, `preco`, `data`, `descri`, `dias`, `modelo`,`placa`) values ('"+nome11.getText()+"','"+vscodigocli.getText()+"','"+vspreço.getText()+"','"+datae.getText()+"','"+descrição.getText()+"','"+dias.getSelectedItem()+"','"+modelo.getText()+"','"+placa.getText()+"')";
-
-software_Sokkyo.statement.executeUpdate(sqlinsert);
-JOptionPane.showMessageDialog(null,"Serviço cadastrado Com Sucesso!");
-software_Sokkyo.executeSQL("select * from venda_servico");
-software_Sokkyo.resultset.next();
-
-}
- catch(SQLException e){
-     JOptionPane.showMessageDialog(null,"Erro Ao Gravar Dados");
- }  
-        }
- else{
-   return;
-     }
 
 }//GEN-LAST:event_BConfirmarActionPerformed
 
     private void nome11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nome11ActionPerformed
-     software_Sokkyo.executeSQL("select * from cadastro_cliente");
-        try	{
-
-software_Sokkyo.resultset.first();
-
-String igual ="n";
-
-int tamanho_pesquisa = nome11.getText().length();
-
-while ( igual == "n")
-{
-
-String pesquisando = software_Sokkyo.resultset.getString("cadastro_nome").substring(0,(tamanho_pesquisa));
-
-if(pesquisando.equals(nome11.getText()))
-
-{
-igual = "s";
-}
-
-else
-
-software_Sokkyo.resultset.next();
-
-}
-
-
-	vscodigocli.setText(software_Sokkyo.resultset.getString("codigo_cliente"));
-	nome11.setText(software_Sokkyo.resultset.getString("cadastro_nome"));
-
-
-}
-	catch(SQLException e)
-{
-JOptionPane.showMessageDialog(null,"Nao Foi Localizado os Dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
-}
+    
     }//GEN-LAST:event_nome11ActionPerformed
 
     /**

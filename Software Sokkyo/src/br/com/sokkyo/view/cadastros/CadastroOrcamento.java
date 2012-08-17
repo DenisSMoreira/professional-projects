@@ -12,12 +12,6 @@
 package br.com.sokkyo.view.cadastros;
 
 
-import com.Sokkyo.Cadastros.*;
-import com.Sokkyo.Utilitarios.Conexão.Conexão;
-import java.sql.SQLException;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,23 +19,13 @@ import javax.swing.JOptionPane;
  * @author Administrador
  */
 public class CadastroOrcamento extends javax.swing.JFrame {
-Conexão softwaresokkyo;
+
 double nt0,nt,nt1;
    int navega = 0;
     /** Creates new form Venda_ProdServ */
     public CadastroOrcamento() {
         initComponents();
-         softwaresokkyo = new Conexão();
-        softwaresokkyo.conecta();
-        Date data = new Date();
-        datae.setText(""+data.getDate()+"/"+data.getMonth()+"/"+(data.getYear()-100));
-        try {
-               softwaresokkyo.executeSQL("select * from softwaresokkyo.venda_prodserv");
-               softwaresokkyo.resultset.first();
-            vizualizarDados();
-        } catch (SQLException ex) {
-            Logger.getLogger(CadastroOrcamento.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }
 
     /** This method is called from within the constructor to
@@ -449,75 +433,11 @@ double nt0,nt,nt1;
     }// </editor-fold>//GEN-END:initComponents
 
     private void nome11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nome11ActionPerformed
-         softwaresokkyo.executeSQL("select * from cadastro_cliente");
-        try	{
-
-            softwaresokkyo.resultset.first();
-
-            String igual ="n";
-
-            int tamanho_pesquisa = nome11.getText().length();
-
-            while ( igual == "n") {
-
-                String pesquisando =  softwaresokkyo.resultset.getString("cadastro_nome").substring(0,(tamanho_pesquisa));
-
-                if(pesquisando.equals(nome11.getText()))
-
-                {
-                    igual = "s";
-                }
-
-                else
-
-                    softwaresokkyo.resultset.next();
-
-            }
-
-
-            vscodigocli.setText( softwaresokkyo.resultset.getString("codigo_cliente"));
-            nome11.setText( softwaresokkyo.resultset.getString("cadastro_nome"));
-
-
-        } catch(SQLException e) {
-            JOptionPane.showMessageDialog(null,"Nao Foi Localizado os Dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
-        }
+       
 }//GEN-LAST:event_nome11ActionPerformed
 
     private void pnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pnomeActionPerformed
-        softwaresokkyo.executeSQL("select * from cadastro_peca");
-        try	{
-
-            softwaresokkyo.resultset.first();
-
-            String igual ="n";
-
-            int tamanho_pesquisa = pnome.getText().length();
-
-            while ( igual == "n") {
-
-                String pesquisando = softwaresokkyo.resultset.getString("cadastroProdnome").substring(0,(tamanho_pesquisa));
-
-                if(pesquisando.equals(pnome.getText()))
-
-                {
-                    igual = "s";
-                }
-
-                else
-
-                    softwaresokkyo.resultset.next();
-
-            }
-
-
-            cod_peca.setText(softwaresokkyo.resultset.getString("cadastroProd"));
-            mostrar_dados();
-
-        } catch(SQLException erro) {
-            JOptionPane.showMessageDialog(null,"Nao Foi Localizado os Dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
-        }        // TODO add your handling code here:
-        // TODO add your handling code here:
+      
 }//GEN-LAST:event_pnomeActionPerformed
 
     private void cod_pecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cod_pecaActionPerformed
@@ -534,8 +454,7 @@ double nt0,nt,nt1;
 }//GEN-LAST:event_vqtdFocusLost
 
     private void BConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BConfirmarActionPerformed
-   
-  CadastrarVenda();
+
  JOptionPane.showMessageDialog(null,"Venda Efetuada e Cadastrada Com Sucesso!");
         
 }//GEN-LAST:event_BConfirmarActionPerformed
@@ -583,14 +502,7 @@ Double v = Double.parseDouble(vspreço.getText());
 }//GEN-LAST:event_Ultimo1MouseExited
 
     private void Ultimo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ultimo1ActionPerformed
-        try {
-            softwaresokkyo.resultset.last();
-        vizualizarDados();
-
-
-        } catch(SQLException erro) {
-
-        }
+      
 }//GEN-LAST:event_Ultimo1ActionPerformed
 
     private void Proximo1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Proximo1MouseEntered
@@ -602,14 +514,7 @@ Double v = Double.parseDouble(vspreço.getText());
 }//GEN-LAST:event_Proximo1MouseExited
 
     private void Proximo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Proximo1ActionPerformed
-        try{
-            softwaresokkyo.resultset.next();
-     vizualizarDados();
-            navega =2;
-        } catch(SQLException erro) {
-
-
-        }
+       
 }//GEN-LAST:event_Proximo1ActionPerformed
 
     private void Anterior1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Anterior1MouseEntered
@@ -621,13 +526,7 @@ Double v = Double.parseDouble(vspreço.getText());
 }//GEN-LAST:event_Anterior1MouseExited
 
     private void Anterior1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Anterior1ActionPerformed
-        try{
-            softwaresokkyo.resultset.previous();
-              vizualizarDados();
-            navega =1;
-        } catch(SQLException erro) {
-
-        }
+       
 }//GEN-LAST:event_Anterior1ActionPerformed
 
     private void Primeiro1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Primeiro1MouseEntered
@@ -639,14 +538,7 @@ Double v = Double.parseDouble(vspreço.getText());
 }//GEN-LAST:event_Primeiro1MouseExited
 
     private void Primeiro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Primeiro1ActionPerformed
-        try{
-            softwaresokkyo.resultset.first();
-     vizualizarDados();
-
-
-        } catch(SQLException erro){
-
-        }
+       
 }//GEN-LAST:event_Primeiro1ActionPerformed
 
     /**
@@ -711,65 +603,5 @@ Double v = Double.parseDouble(vspreço.getText());
     private javax.swing.JTextField vtotal;
     private javax.swing.JTextField vvalor;
     // End of variables declaration//GEN-END:variables
-public void mostrar_dados(){
-        try{
-
-                pnome.setText(softwaresokkyo.resultset.getString("cadastroProdnome"));
-          vvalor.setText(softwaresokkyo.resultset.getString("cadastroProd_preco"));
-          jLabel50.setText(softwaresokkyo.resultset.getString("cadastroProd_qtd"));
-
-            }
-            catch(SQLException erro){
-
-            }
-    }
-public void vizualizarDados() throws SQLException{
-     softwaresokkyo.executeSQL("select * from softwaresokkyo.venda_prodserv");
-   try{
-     codigOS.setText(softwaresokkyo.resultset.getString("codigoOrcamento"));
-nome11.setText(softwaresokkyo.resultset.getString("nome_cliente"));
-vscodigocli.setText(softwaresokkyo.resultset.getString("cod_cliente"));
-pnome.setText(softwaresokkyo.resultset.getString("peca"));
-cod_peca.setText(softwaresokkyo.resultset.getString("cod_peca"));
-vqtd.setText(softwaresokkyo.resultset.getString("qtd"));
-vendedor.setText(softwaresokkyo.resultset.getString("vendedor"));
-vvalor.setText(softwaresokkyo.resultset.getString("valor_peca_unidade"));
-vtotal.setText(softwaresokkyo.resultset.getString("total"));
-datae.setText(softwaresokkyo.resultset.getString("dias"));
-dias.setSelectedItem(softwaresokkyo.resultset.getString("previsao"));
- placa.setText(softwaresokkyo.resultset.getString("placa"));
-vspreço.setText(softwaresokkyo.resultset.getString("valor_or"));
-modelo.setText(softwaresokkyo.resultset.getString("modelo"));
-vspreço1.setText(softwaresokkyo.resultset.getString("total"));
-descrição.setText(softwaresokkyo.resultset.getString("descricao"));
-   }
- catch(SQLException erro){
- if (navega == 1){
-                    JOptionPane.showMessageDialog(null, "Voçê jà Está no Primeiro Registro.");
-                    softwaresokkyo.resultset.next();
-                  }
-                else if(navega == 2){
-                    JOptionPane.showMessageDialog(null, "Voçê jà Está no Ultimo Registro.");
-                     softwaresokkyo.resultset.previous();
-                  }
-                else
-          
-              navega = 0;
-
- }}
-
-public void CadastrarVenda()
-{
-try {
-softwaresokkyo.executeSQL("select * from softwaresokkyo.venda_prodserv");
- String sql_insrt ="INSERT INTO softwaresokkyo.venda_prodserv (nome_cliente, cod_cliente, peca, cod_peca, qtd, vendedor, valor_peca, `data`, previsao, modelo, valor_or, valor_peca_unidade, descricao, placa, total) VALUES ('"+nome11.getText()+"', '"+vscodigocli.getText()+"', '"+pnome.getText()+"', '"+cod_peca.getText()+"', '"+vqtd.getText()+"', '"+vendedor.getText()+"', '"+vtotal.getText()+"', '"+datae.getText()+"', '"+dias.getSelectedItem()+"', '"+modelo.getText()+"', '"+vspreço.getText()+"', '"+vspreço1.getText()+"', '"+vvalor.getText()+"', '"+descrição.getText()+"','"+placa.getText()+"','"+vspreço1.getText()+"')";
-softwaresokkyo.statement.executeUpdate(sql_insrt);
-
-}
-
- catch(SQLException e){
-     JOptionPane.showMessageDialog(null,"Erro Ao Gravar Dados! Por Favor Digite Novamente! "+e);
- }
-}
 
 }

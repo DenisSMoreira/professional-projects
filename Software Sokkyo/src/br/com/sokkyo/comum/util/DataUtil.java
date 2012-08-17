@@ -1,7 +1,6 @@
 package br.com.sokkyo.comum.util;
-import com.Sokkyo.Utilitarios.Data.*;
-import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DataUtil {
 

@@ -11,8 +11,7 @@
 
 package br.com.sokkyo.view.venda;
 
-import com.Sokkyo.Venda.*;
-import com.Sokkyo.Utilitarios.Conexão.Conexão;
+
 import java.sql.SQLException;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -22,13 +21,11 @@ import javax.swing.JOptionPane;
  * @author Administrador
  */
 public class VendaCompleta extends javax.swing.JFrame {
-Conexão softwaresokkyo;
 double nt0,nt,nt1;
     /** Creates new form VendaCompleta */
     public VendaCompleta() {
         initComponents();
-         softwaresokkyo = new Conexão();
-        softwaresokkyo.conecta();
+
         Date data = new Date();
         datae.setText(""+data.getDate()+"/"+data.getMonth()+"/"+(data.getYear()-100));
     }
@@ -346,75 +343,11 @@ double nt0,nt,nt1;
     }// </editor-fold>//GEN-END:initComponents
 
     private void nome11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nome11ActionPerformed
-         softwaresokkyo.executeSQL("select * from cadastro_cliente");
-        try	{
-
-            softwaresokkyo.resultset.first();
-
-            String igual ="n";
-
-            int tamanho_pesquisa = nome11.getText().length();
-
-            while ( igual == "n") {
-
-                String pesquisando =  softwaresokkyo.resultset.getString("cadastro_nome").substring(0,(tamanho_pesquisa));
-
-                if(pesquisando.equals(nome11.getText()))
-
-                {
-                    igual = "s";
-                }
-
-                else
-
-                    softwaresokkyo.resultset.next();
-
-            }
-
-
-            vscodigocli.setText( softwaresokkyo.resultset.getString("codigo_cliente"));
-            nome11.setText( softwaresokkyo.resultset.getString("cadastro_nome"));
-
-
-        } catch(SQLException e) {
-            JOptionPane.showMessageDialog(null,"Nao Foi Localizado os Dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
-        }
+        
 }//GEN-LAST:event_nome11ActionPerformed
 
     private void pnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pnomeActionPerformed
-        softwaresokkyo.executeSQL("select * from cadastro_peca");
-        try	{
-
-            softwaresokkyo.resultset.first();
-
-            String igual ="n";
-
-            int tamanho_pesquisa = pnome.getText().length();
-
-            while ( igual == "n") {
-
-                String pesquisando = softwaresokkyo.resultset.getString("cadastroProdnome").substring(0,(tamanho_pesquisa));
-
-                if(pesquisando.equals(pnome.getText()))
-
-                {
-                    igual = "s";
-                }
-
-                else
-
-                    softwaresokkyo.resultset.next();
-
-            }
-
-
-            cod_peca.setText(softwaresokkyo.resultset.getString("cadastroProd"));
-            mostrar_dados();
-
-        } catch(SQLException erro) {
-            JOptionPane.showMessageDialog(null,"Nao Foi Localizado os Dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
-        }        // TODO add your handling code here:
-        // TODO add your handling code here:
+       
 }//GEN-LAST:event_pnomeActionPerformed
 
     private void cod_pecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cod_pecaActionPerformed
@@ -431,32 +364,7 @@ double nt0,nt,nt1;
 }//GEN-LAST:event_vqtdFocusLost
 
     private void BConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BConfirmarActionPerformed
-        double nt,nt2,nt3 = 0;
-
-        nt= Double.parseDouble(vqtd.getText());
-        nt2=Double.parseDouble(jLabel50.getText());
-
-        if(nt<nt2){
-            nt3 = nt2 - nt;
-        } else { JOptionPane.showMessageDialog(null,"Nao Tem Peças Suficiente!");
-        return;
-        }
-        String nome = "Tem Certeza que gostaria de Efetuar a Venda?";
-        int opcao_escolhida = JOptionPane.showConfirmDialog(null,nome,"Confirmar",JOptionPane.YES_NO_OPTION);
-        if ( opcao_escolhida == JOptionPane.YES_OPTION){
-       CadastrarVenda();
- softwaresokkyo.executeSQL("select * from cadastro_peca");
-  String sql = "UPDATE softwaresokkyo.cadastro_peca SET `cadastroProd_qtd` = '"+nt3+"' WHERE `cadastroProd` = "+cod_peca.getText();
-            try {
-   softwaresokkyo.statement.executeUpdate(sql);
-     JOptionPane.showMessageDialog(null,"Venda Efetuada e Cadastrada Com Sucesso!");
-            } catch (SQLException ex) {
-
-            }
-
-
-        } else
-            return;
+       
 }//GEN-LAST:event_BConfirmarActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -548,29 +456,5 @@ Double v = Double.parseDouble(vspreço.getText());
     private javax.swing.JTextField vtotal;
     private javax.swing.JTextField vvalor;
     // End of variables declaration//GEN-END:variables
-public void mostrar_dados(){
-        try{
 
-                pnome.setText(softwaresokkyo.resultset.getString("cadastroProdnome"));
-          vvalor.setText(softwaresokkyo.resultset.getString("cadastroProd_preco"));
-          jLabel50.setText(softwaresokkyo.resultset.getString("cadastroProd_qtd"));
-
-            }
-            catch(SQLException erro){
-
-            }
-    }
-public void CadastrarVenda()
-{
-try {
-softwaresokkyo.executeSQL("select * from softwaresokkyo.venda_prodserv");
- String sql_insrt ="INSERT INTO softwaresokkyo.venda_prodserv (nome_cliente, cod_cliente, peca, cod_peca, qtd, vendedor, valor_peca, `data`, previsao, placa, modelo, valor_or, total, valor_peca_unidade, descricao) VALUES ('"+nome11.getText()+"', '"+vscodigocli.getText()+"', '"+pnome.getText()+"', '"+cod_peca.getText()+"', '"+vqtd.getText()+"', '"+vendedor.getText()+"', '"+vtotal.getText()+"', '"+datae.getText()+"', '"+dias.getSelectedItem()+"', '"+placa.getText()+"', '"+modelo.getText()+"', '"+vspreço.getText()+"', '"+vspreço1.getText()+"', '"+vvalor.getText()+"', '"+descrição.getText()+"')";
-softwaresokkyo.statement.executeUpdate(sql_insrt);
-
-}
-
- catch(SQLException e){
-     JOptionPane.showMessageDialog(null,"Erro Ao Gravar Dados! Por Favor Digite Novamente! "+e);
- }
-}
 }
