@@ -10,16 +10,14 @@
  */
 package br.com.sokkyo.view.consultas;
 
-import com.Sokkyo.Consulta.*;
-import com.Sokkyo.Cadastros.Cadastro_Peça;
-import com.Sokkyo.Utilitarios.Conexão.Conexão;
+
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class ConsultarPecas extends javax.swing.JFrame {
 
-    Conexão softwaresokkyo;
+  
     double qtd, qtdM;
     public int navega = 1;
     public String ordenaçao = "cadastroProdnome";
@@ -29,16 +27,7 @@ public class ConsultarPecas extends javax.swing.JFrame {
      */
     public ConsultarPecas() {
         initComponents();
-        softwaresokkyo = new Conexão();
-        softwaresokkyo.conecta();
-        softwaresokkyo.executeSQL("select * from cadastro_peca");
-        try {
-            calcularNumero();
-            PreencherDados();
-        } catch (Exception e) {
-            System.out.print(e);
-        }
-
+       
     }
 
     /**
@@ -385,11 +374,11 @@ public class ConsultarPecas extends javax.swing.JFrame {
 }//GEN-LAST:event_plocalizaActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        Visualizao("cadastroProdnome");
+
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        Visualizao("cadastroProd");
+  
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -411,121 +400,21 @@ public class ConsultarPecas extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
 
-        String senha = JOptionPane.showInputDialog(null, "Digite a Senha:");
-        if (senha.equals("admin")) {
-            new Cadastro_Peça().show();
-            dispose();
-        } else {
-            JOptionPane.showMessageDialog(null, "Acesso Negado");
-        }
 }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton9FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton9FocusLost
 }//GEN-LAST:event_jButton9FocusLost
 
     private void ecodigo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ecodigo1ActionPerformed
-        if (ecodigo1.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Por Favor Digite o Nome Do Cliente Desejado!");
-            return;
-        } else {
-
-            try {
-                softwaresokkyo.resultset.first();
-
-                String i = "s";
-
-                while (i == "s") {
-                    String pesquisando = softwaresokkyo.resultset.getString("cadastroProd");
-                    if (pesquisando.equals(ecodigo1.getText())) {
-                        i = "n";
-                    } else {
-                        softwaresokkyo.resultset.next();
-                    }
-
-                }
-
-                pnome.setText(softwaresokkyo.resultset.getString("cadastroProdnome"));
-                mostrar_dados();
-                VerificarSituação();
-            } catch (SQLException erro) {
-                JOptionPane.showMessageDialog(null, "Nao Foi Localizado os Dados !");
-            }
-        }
-
+       
     }//GEN-LAST:event_ecodigo1ActionPerformed
 
     private void enomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enomeActionPerformed
-        softwaresokkyo.executeSQL("select * from cadastro_peca");
-        if (enome.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Por Favor Digite o Nome Do Cliente Desejado!");
-            return;
-        } else {
-            try {
-
-                softwaresokkyo.resultset.first();
-
-                String igual = "n";
-
-                while (igual == "n") {
-
-                    String pesquisando = softwaresokkyo.resultset.getString("cadastroProdnome");
-
-                    if (pesquisando.equals(enome.getText())) {
-                        igual = "s";
-                    } else {
-                        softwaresokkyo.resultset.next();
-                    }
-
-                }
-
-
-                ecodigo.setText(softwaresokkyo.resultset.getString("cadastroProd"));
-                mostrar_dados();
-                VerificarSituação();
-
-
-            } catch (SQLException erro) {
-                JOptionPane.showMessageDialog(null, "Nao Foi Localizado os Dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
-            }
-        }
+      
     }//GEN-LAST:event_enomeActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        softwaresokkyo.executeSQL("select * from cadastro_peca");
-        if (enome.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Por Favor Digite o Nome Do Cliente Desejado!");
-            return;
-        } else {
-            try {
-
-                softwaresokkyo.resultset.first();
-
-                String igual = "n";
-
-                int tamanho_pesquisa = enome.getText().length();
-
-                while (igual == "n") {
-
-                    String pesquisando = softwaresokkyo.resultset.getString("cadastroProdnome").substring(0, (tamanho_pesquisa));
-
-                    if (pesquisando.equals(enome.getText())) {
-                        igual = "s";
-                    } else {
-                        softwaresokkyo.resultset.next();
-                    }
-
-                }
-
-
-                ecodigo.setText(softwaresokkyo.resultset.getString("cadastroProd"));
-                mostrar_dados();
-                VerificarSituação();
-
-
-            } catch (SQLException erro) {
-                JOptionPane.showMessageDialog(null, "Nao Foi Localizado os Dados ! \nDica: Caso Seja Um Usuario Nao Cadastrado Efetue Um novo Cadastro");
-            }
-        }
+     
     }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
@@ -583,74 +472,5 @@ public class ConsultarPecas extends javax.swing.JFrame {
     private javax.swing.JTextField situação;
     // End of variables declaration//GEN-END:variables
 
-    public void mostrar_dados() throws SQLException {
-        try {
-            ecodigo.setText(softwaresokkyo.resultset.getString("cadastroProd"));
-            pnome.setText(softwaresokkyo.resultset.getString("cadastroProdnome"));
-            pqtd.setText(softwaresokkyo.resultset.getString("cadastroProd_qtd"));
-            ppreço.setText(softwaresokkyo.resultset.getString("cadastroProd_preco"));
-            plocaliza.setText(softwaresokkyo.resultset.getString("cadastroProd_local"));
-            fornecedor.setText(softwaresokkyo.resultset.getString("cadastroProd_fornecedor"));
-            pdiscri.setText(softwaresokkyo.resultset.getString("cadastroProd_descri"));
-            EstoqueMinimo.setText(softwaresokkyo.resultset.getString("estoqueMinimo"));
-
-        } catch (SQLException erro) {
-            System.out.print(erro);
-        }
-    }
-
-    public void PreencherDados() {
-        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-        modelo.setNumRows(0);
-        try {
-            while (softwaresokkyo.resultset.next()) {
-                modelo.addRow(new Object[]{softwaresokkyo.resultset.getString("cadastroProd"), softwaresokkyo.resultset.getString("cadastroProdnome"), softwaresokkyo.resultset.getString("cadastroProd_qtd"), softwaresokkyo.resultset.getString("cadastroProd_preco")});
-            }
-
-        } catch (SQLException erro) {
-            System.out.print(erro);
-        }
-    }
-
-    public void Visualizao(String ordem) {
-        ordenaçao = ordem;
-        softwaresokkyo.executeSQL("select * from cadastro_peca order by " + ordenaçao);
-        PreencherDados();
-        try {
-            softwaresokkyo.resultset.first();
-        } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "Nao Foi Possivel alterar a ordenação!");
-            System.out.print(erro);
-        }
-        softwaresokkyo.executeSQL("select * from cadastro_peca");
-
-
-    }
-
-    public void VerificarSituação() {
-        qtdM = Double.parseDouble(EstoqueMinimo.getText());
-        qtd = Double.parseDouble(pqtd.getText());
-
-        if (qtd == qtdM) {
-            situação.setText("Estoque Baixo");
-            situação.setForeground(new java.awt.Color(255, 255, 0));
-        } else if (qtd < qtdM) {
-            situação.setText("Peça Critica");
-            situação.setForeground(new java.awt.Color(255, 0, 0));
-        } else {
-            situação.setText("Nomal");
-            situação.setForeground(new java.awt.Color(0, 102, 255));
-        }
-    }
-
-    public void calcularNumero() throws SQLException {
-        softwaresokkyo.resultset.first();
-        int i = 1;
-        while (softwaresokkyo.resultset.next()) {
-            i++;
-
-        }
-        numerodecliente.setText("" + i);
-        softwaresokkyo.executeSQL("select * from cadastro_peca");
-    }
+   
 }
