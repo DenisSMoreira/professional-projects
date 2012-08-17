@@ -11,71 +11,19 @@
 
 package br.com.sokkyo.view.login;
 
-
-import com.Sokkyo.Login.Acesso.Login;
-import com.Sokkyo.Utilitarios.Conexão.Conexão;
-import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-
 /**
  *
  * @author adm
  */
 public class RecuperarSenha extends javax.swing.JFrame {
 
-   Conexão softwaresokkyo;
-     SendMailAcc sm = new SendMailAcc("smtp.gmail.com","465");
-     String seta_look ="com.jtattoo.plaf.acryl.AcrylLookAndFeel";
-     String Assunto = "Recovery Account";
-     public String Login;
-    public String Senha, LoSe;
-      int Conta = 0;
- int Gravar =0;
+
     public RecuperarSenha() {
         initComponents();
-            lookandfeel();
-       softwaresokkyo = new Conexão();
-        softwaresokkyo.conecta();
-        softwaresokkyo.executeSQL("select * from login");
-
+      
     }
 
-    public String getLogin() {
-        return Login;
-    }
-
-    /**
-     * @param Login the Login to set
-     */
-    public void setLogin(String Login) {
-        this.Login = Login;
-    }
-
-    /**
-     * @return the Senha
-     */
-    public String getSenha() {
-        return Senha;
-    }
-
-    /**
-     * @param Senha the Senha to set
-     */
-    public void setSenha(String Senha) {
-        this.Senha = Senha;
-    }
  
- private void lookandfeel(){
-         try   {
-            UIManager.setLookAndFeel(seta_look);
-            SwingUtilities.updateComponentTreeUI(this);
-        }
-        catch (Exception erro)
-           {
-            JOptionPane.showMessageDialog(null, erro);
-        }
-    }
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -107,7 +55,7 @@ public class RecuperarSenha extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton4.setForeground(new java.awt.Color(153, 153, 153));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/confirmarOpaco.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/confirmarOpaco.png"))); // NOI18N
         jButton4.setToolTipText("Confirmar");
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -129,7 +77,7 @@ public class RecuperarSenha extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton5.setForeground(new java.awt.Color(153, 153, 153));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/sairOpaco.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/sairOpaco.png"))); // NOI18N
         jButton5.setToolTipText("Cancelar");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -151,7 +99,7 @@ public class RecuperarSenha extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton6.setForeground(new java.awt.Color(153, 153, 153));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/cancelarOpaco.png"))); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/cancelarOpaco.png"))); // NOI18N
         jButton6.setMnemonic('c');
         jButton6.setToolTipText("Sair");
         jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -248,98 +196,52 @@ public class RecuperarSenha extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/ok-32x32.png")));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/ok-32x32.png")));
 }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseEntered
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/ok-32x32.png")));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/ok-32x32.png")));
 
         // TODO add your handling code here:
 }//GEN-LAST:event_jButton4MouseEntered
 
     private void jButton4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseExited
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/confirmarOpaco.png")));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/confirmarOpaco.png")));
 
         // TODO add your handling code here:
 }//GEN-LAST:event_jButton4MouseExited
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if (emailUsuario.getText().equals("")||(cpf.getText().equals(""))) {
-            JOptionPane.showMessageDialog(null,"Os Campos não Podem ser vazio!");
-            return;
-        }
-     
-        if(Conta<=3){
-            try {
-
-                String sql = "select * from login Where cpf like '"+cpf.getText()+"' and email like '"+emailUsuario.getText()+"'";
-                softwaresokkyo.executeSQL(sql);
-
-        if(softwaresokkyo.resultset.first()){
- setLogin(softwaresokkyo.resultset.getString("login"));
- setSenha(softwaresokkyo.resultset.getString("senha"));
-  try{
-    sm.sendMail(emailUsuario.getText(),emailUsuario.getText(),Assunto,getLogin()+getSenha());
-        }
-catch(Exception e){
-    JOptionPane.showMessageDialog(null,"Erro ao enviar!");
-}
-JOptionPane.showMessageDialog(null,"Enviado com Sucesso!");
-    dispose();
-                }
-            else {
-                    Conta++;
-                    if(Conta==1){
-                        JOptionPane.showMessageDialog(null,"Senha Incorreta \nVoce Sò Tem Mais 2 Chances !");
-                        emailUsuario.setText("");
-                        cpf.setText("");
-                    } if(Conta==2){JOptionPane.showMessageDialog(null,"Senha Incorreta \nVoce Sò Tem Mais 1 Chance!");
-                        emailUsuario.setText("");
-                        cpf.setText("");
-                    }
-                    if(Conta==3){
-                       JOptionPane.showMessageDialog(null,"Usuario Restrito ao Uso do Sistema \nO Aplicativo Será Fechado");
-                       dispose();
-        }
-                    }
-
-
-
-
-            } catch (Exception erro) {
-
-            }
-
-        }
+       
 }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/6155_32x32.png")));        // TODO add your handling code here:
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/6155_32x32.png")));        // TODO add your handling code here:
 }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/6155_32x32.png")));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/6155_32x32.png")));
 }//GEN-LAST:event_jButton5MouseEntered
 
     private void jButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseExited
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/sairOpaco.png")));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/sairOpaco.png")));
 }//GEN-LAST:event_jButton5MouseExited
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        new Login().setVisible(true);
+        new Autenticacao().setVisible(true);
            dispose();
 }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/fechar_32x32.png")));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/fechar_32x32.png")));
 }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseEntered
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/fechar_32x32.png")));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/fechar_32x32.png")));
 }//GEN-LAST:event_jButton6MouseEntered
 
     private void jButton6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseExited
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Sokkyo/icones/cancelarOpaco.png")));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/icons/cancelarOpaco.png")));
 }//GEN-LAST:event_jButton6MouseExited
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
