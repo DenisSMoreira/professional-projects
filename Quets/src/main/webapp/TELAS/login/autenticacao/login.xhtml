@@ -27,21 +27,20 @@
                
                     <h:panelGrid columns="3" cellpadding="2">  
                         <h:outputLabel for="firstname" value="Usuario: *" />  
-                        <p:inputText id="firstname"   
-
-                                     required="true" label="Firstname">  
+                        <p:inputText id="firstname" value="#{login.usuario}"      required="true" label="Firstname">  
                             <f:validateLength minimum="2" />  
                         </p:inputText>  
                         <p:message for="firstname" />  
 
                         <h:outputLabel for="surname" value="Senha: *" />  
-                        <p:password id="surname" requiredMessage="Por favor digite a sua senha" required="true" label="Surname"/>  
+                        <p:keyboard password="true"  id="surname" value="#{login.senha}" requiredMessage="Por favor digite a sua senha" required="true" label="Surname"/>  
+                        
                         <p:message for="surname" />  
 
                     </h:panelGrid>  
                     
-                <p:commandButton value="Logar" update="panel"   
-                                  />  
+                <p:commandButton value="Logar"  
+                                 global="true"   action="#{login.acessar()}" />  
 
             </p:panel>  
 </div>
