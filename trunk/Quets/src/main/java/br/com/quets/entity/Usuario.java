@@ -11,3 +11,5 @@ package br.com.quets.entity;
 public class Usuario {
     private Long cpf;
 }
+
+
