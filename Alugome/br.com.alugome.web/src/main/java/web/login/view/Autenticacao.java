@@ -5,29 +5,27 @@
 package web.login.view;
 
 import com.alugome.entitys.Login;
-import java.io.Serializable;
 import java.util.Date;
+import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import web.comum.excpetion.BaseException;
 import web.comum.session.SessaoWeb;
-
 import web.login.service.IAutenticacaoService;
 import web.login.util.ForwardsLogin;
 
 @ManagedBean
 @RequestScoped
-public class Autenticacao implements Serializable {
+public class Autenticacao {
 
-    private static final long serialVersionUID = 1L;
     private String usuario;
     private String senha;
+    
+    @EJB
     private IAutenticacaoService autenticacaoService;
 
     public String verificarAutenticacao() {
@@ -58,7 +56,7 @@ public class Autenticacao implements Serializable {
             }
         }
         catch (BaseException ex) {
-            Logger.getLogger(Autenticacao.class.getName()).error(ex.getMessage(), ex);
+           ex.printStackTrace();
         }
         return retorno;
     }

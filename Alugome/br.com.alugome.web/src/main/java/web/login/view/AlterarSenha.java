@@ -4,6 +4,7 @@
  */
 package web.login.view;
 
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import web.login.service.IAlterarService;
@@ -16,6 +17,7 @@ import web.login.service.IAlterarService;
 @RequestScoped
 public class AlterarSenha {
     
+     @EJB
     private IAlterarService alterarService;
 
     /**

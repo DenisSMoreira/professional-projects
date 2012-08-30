@@ -7,6 +7,8 @@ package web.login.service.impl;
 import com.alugome.entitys.Login;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ejb.Local;
+import javax.ejb.Stateless;
 import web.comum.dao.exception.DataBaseException;
 import web.comum.excpetion.BaseException;
 import web.login.dao.ILoginDAO;
@@ -16,6 +18,8 @@ import web.login.service.IAutenticacaoService;
  *
  * @author Admin
  */
+@Local
+@Stateless
 public class AutenticacaoService implements IAutenticacaoService {
 
     private ILoginDAO loginDAO;

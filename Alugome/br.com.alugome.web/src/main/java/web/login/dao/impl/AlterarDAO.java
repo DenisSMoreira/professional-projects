@@ -4,6 +4,8 @@
  */
 package web.login.dao.impl;
 
+import javax.ejb.Local;
+import javax.ejb.Stateless;
 import web.login.dao.IAlterarDAO;
 import web.comum.dao.AbstractDAO;
 
@@ -11,6 +13,9 @@ import web.comum.dao.AbstractDAO;
  *
  * @author dmoreira
  */
+
+@Local
+@Stateless
 public class AlterarDAO extends AbstractDAO<Object, Object>  implements IAlterarDAO{
     
 }

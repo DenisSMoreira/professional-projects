@@ -4,6 +4,8 @@
  */
 package web.login.service.impl;
 
+import javax.ejb.Local;
+import javax.ejb.Stateless;
 import web.login.dao.IAlterarDAO;
 import web.login.service.IAlterarService;
 
@@ -11,6 +13,8 @@ import web.login.service.IAlterarService;
  *
  * @author dmoreira
  */
+@Local
+@Stateless
 public class AlterarService implements IAlterarService{
     
     private IAlterarDAO alterarDAO;
