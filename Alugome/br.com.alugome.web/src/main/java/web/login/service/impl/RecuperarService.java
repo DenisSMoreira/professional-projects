@@ -4,13 +4,17 @@
  */
 package web.login.service.impl;
 
-import web.login.service.IRecuperarService;
+import javax.ejb.Local;
+import javax.ejb.Stateless;
 import web.login.dao.IRecuperarDAO;
+import web.login.service.IRecuperarService;
 
 /**
  *
  * @author dmoreira
  */
+@Local
+@Stateless
 public class RecuperarService implements IRecuperarService {
 
     private IRecuperarDAO recuperarDAO;

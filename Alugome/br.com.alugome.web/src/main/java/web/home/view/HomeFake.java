@@ -18,10 +18,8 @@ import web.login.util.ForwardsLogin;
  * @author dmoreira
  */
 @ManagedBean(name="home")
-public class HomeFake implements Serializable {
+public class HomeFake  {
 
-    
-    private static final long serialVersionUID = 1L;
 
     /**
      * @return the forwardCadastrar

@@ -5,6 +5,8 @@
 package web.login.dao.impl;
 
 import com.alugome.entitys.Login;
+import javax.ejb.Local;
+import javax.ejb.Stateless;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -13,7 +15,8 @@ import web.comum.dao.exception.DataBaseException;
 import web.comum.dao.util.SessionDao;
 import web.login.dao.ILoginDAO;
 
-
+@Local
+@Stateless
 public class LoginDAO extends AbstractDAO<Login, Long> implements ILoginDAO {
 
     @Override
