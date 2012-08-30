@@ -4,6 +4,8 @@
  */
 package web.login.service.impl;
 
+import javax.ejb.Local;
+import javax.ejb.Stateless;
 import web.login.dao.ICadastrarDAO;
 import web.login.service.ICadastrarService;
 
@@ -11,6 +13,8 @@ import web.login.service.ICadastrarService;
  *
  * @author dmoreira
  */
+@Local
+@Stateless
 public class CadastrarService implements ICadastrarService{
 
    private ICadastrarDAO cadastrarDAO;

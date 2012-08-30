@@ -4,6 +4,8 @@
  */
 package web.login.dao.impl;
 
+import javax.ejb.Local;
+import javax.ejb.Stateless;
 import web.comum.dao.AbstractDAO;
 import web.login.dao.IDesbloquearDAO;
 
@@ -11,6 +13,8 @@ import web.login.dao.IDesbloquearDAO;
  *
  * @author dmoreira
  */
+@Local
+@Stateless
 public class DesbloquearDAO extends AbstractDAO<Object, Object>  implements IDesbloquearDAO{
     
 }

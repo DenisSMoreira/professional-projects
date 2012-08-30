@@ -6,6 +6,7 @@ package web.login.view;
 
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 
 /**
@@ -13,8 +14,9 @@ import javax.faces.bean.ManagedBean;
  * @author dmoreira
  */
 @ManagedBean(name = "desbConfirmacao")
-public class DesbloquearSenhaConfirmacao implements Serializable{
-    private static final long serialVersionUID = 1L;
+@RequestScoped
+public class DesbloquearSenhaConfirmacao {
+
     private String pergunta ;
     private String resposta;
     
