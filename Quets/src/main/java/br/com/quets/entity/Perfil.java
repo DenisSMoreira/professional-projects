@@ -4,17 +4,11 @@
  */
 package br.com.quets.entity;
 
-import java.util.List;
-
 /**
  *
  * @author Guilhe
  */
-public class Login {
-    
+public class Perfil {
     private Long codigo;
-    private String senha;
-    private String usuario;
-    private Integer quantidadeAcesso;
-    private List<Perfil> listaPerfis;
+    private String descricao;
 }

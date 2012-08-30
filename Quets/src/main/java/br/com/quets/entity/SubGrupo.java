@@ -4,11 +4,13 @@
  */
 package br.com.quets.entity;
 
+import java.util.List;
+
 /**
  *
- * @author Guilhe
+ * @author glucca
  */
-public class PerfilLogin {
-    private Long codigo;
-    private String descricao;
+public class SubGrupo {
+    
+      private List<UsuarioProvisorio> listaUsuarioProvisorio;
 }
