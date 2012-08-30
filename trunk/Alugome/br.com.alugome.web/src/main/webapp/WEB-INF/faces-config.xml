@@ -8,10 +8,7 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
 
     <application>
-        <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
-  
-        
-        <resource-bundle>
+<!--        <resource-bundle>
             <base-name>web.login.resource.AutenticacaoResources</base-name>
             <var>AutenticacaoResources</var>
         </resource-bundle>
@@ -34,19 +31,19 @@
         <resource-bundle>
             <base-name>web.login.resource.RecuperarSenhaResources</base-name>
             <var>RecuperarSenhaResources</var>
-        </resource-bundle>
+        </resource-bundle>-->
     
    
-        <locale-config>
+<!--        <locale-config>
             <default-locale>pt</default-locale>
             <supported-locale>en</supported-locale>
-        </locale-config>
+        </locale-config>-->
  
 
     </application>  
     
-    <lifecycle> 
+<!--    <lifecy cle> 
         <phase-listener>web.comum.session.listener.PhaseListener</phase-listener>
-    </lifecycle>
+    </lifecy cle>-->
 
 </faces-config>
