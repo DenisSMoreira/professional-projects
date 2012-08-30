@@ -1,2 +1,0 @@
-Reportar.SendMail
-Reportar.SimpleAuth
