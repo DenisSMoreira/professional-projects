@@ -9,7 +9,9 @@ package br.com.quets.entity;
  * @author Guilhe
  */
 public class Alternativa {
-    
+    /**
+     * sdfsdfsdfs
+     */
     private Long codigo;
     private Integer numeroAlternativa;
     private Integer numeroMinimo;
