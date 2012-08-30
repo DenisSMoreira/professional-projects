@@ -1,0 +1,76 @@
+
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core" >
+    
+    <h:head>
+
+        <title>Cadastrar Senha</title>
+    </h:head>
+
+    <h:body>
+        <p:ajaxStatus style="width:16px;height:16px;" id="ajaxStatusPanel"> 
+    <f:facet name="start">  
+     <p:graphicImage value="/images/ajaxloadingbar.gif" />  
+    </f:facet>  
+      
+    <f:facet name="complete">  
+        <h:outputText value="" />  
+    </f:facet>  
+       </p:ajaxStatus>      
+<h:form id="form2">  
+    <p:panel id="panel" header="Alterar Senha - Dados Entrada" style="width: 600px; margin: 10% auto;">
+  
+        <p:messages id="msgs" />
+    
+        <h:panelGrid id="grid" columns="3" cellpadding="5" >  
+
+         <h:outputText value="Tipo usuário: " />  
+         <h:outputText value="Funcionario" /> 
+         <h:outputText value="" />   
+         
+             <h:outputText value="Usuário: " />  
+         <h:outputText value="Usuario Teste" /> 
+         <h:outputText value="" />   
+     
+        <h:outputText value="RG/RA *" />  
+        <h:outputText value="99.999.999-99" /> 
+        <h:outputText value="" />   
+        
+        <h:outputText value="Codigo Escola: *" />  
+        <h:outputText value="001212" />
+        <h:outputText value="" />   
+
+        <h:outputText value="Data Nascimento: *" />  
+        <h:outputText value="99/99/9999" />
+        <h:outputText value="" />   
+         <p:separator /><p:separator /> <h:outputText value="" />   
+        <h:outputText value="Senha atual: *" />  
+        <p:password id="atual" required="true" requiredMessage="Campo necessário." converterMessage="Password incorreto" />  
+        <p:message id="textOnlyMessage8" for="atual" display="text" />  
+        <p:separator /><p:separator /> <h:outputText value="" />   
+        <h:outputText value="Nova senha: *" />  
+        <p:password id="textOnly4" required="true" feedback="true" match="conPassword" requiredMessage="Campo necessário."  converterMessage="Password não são iguais"
+                    promptLabel="Por favor digite um password" weakLabel="Fraca"  
+                    goodLabel="Media" strongLabel="Otima" validatorMessage="Password não são iguais" /> 
+        <p:message id="textOnlyMessage4" for="textOnly4" display="text" />  
+        
+        <h:outputText value="Confirme a senha: *" />  
+        <p:password id="conPassword" required="true" requiredMessage="Campo necessário." converterMessage="Password incorreto" />  
+        <p:message id="textOnlyMessage5" for="conPassword" display="text" />  
+        <p:separator /><p:separator /> <h:outputText value="" />   
+    </h:panelGrid> 
+  
+        <p:commandButton id="confirmar" value="Confirmar" update="grid"/>  
+        <p:commandButton id="voltar" value="Voltar" update="grid"/>  
+   </p:panel>  
+</h:form>  				
+    </h:body>
+</html>
+
