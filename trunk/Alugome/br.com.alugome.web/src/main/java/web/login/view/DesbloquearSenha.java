@@ -5,7 +5,9 @@
 package web.login.view;
 
 import java.io.Serializable;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import web.login.service.IDesbloquearService;
 
 /**
@@ -13,9 +15,12 @@ import web.login.service.IDesbloquearService;
  * @author dmoreira
  */
 @ManagedBean(name = "desbloquear")
+@RequestScoped
 public class DesbloquearSenha implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
+    @EJB
     private IDesbloquearService desbloquearService;
     private String rg;
 

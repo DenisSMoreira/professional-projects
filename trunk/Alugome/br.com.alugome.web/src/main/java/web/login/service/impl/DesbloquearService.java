@@ -4,6 +4,8 @@
  */
 package web.login.service.impl;
 
+import javax.ejb.Local;
+import javax.ejb.Stateless;
 import web.login.dao.IDesbloquearDAO;
 import web.login.service.IDesbloquearService;
 
@@ -11,6 +13,8 @@ import web.login.service.IDesbloquearService;
  *
  * @author dmoreira
  */
+@Local
+@Stateless
 public class DesbloquearService implements IDesbloquearService{
     
     private IDesbloquearDAO desbloquearDAO;

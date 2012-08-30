@@ -5,7 +5,9 @@
 package web.login.view;
 
 import java.io.Serializable;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import web.login.service.ICadastrarService;
 
 /**
@@ -13,9 +15,11 @@ import web.login.service.ICadastrarService;
  * @author dmoreira
  */
 @ManagedBean(name = "cadastrar")
-public class CadastrarSenha implements Serializable {
+@RequestScoped
+public class CadastrarSenha  {
 
-    private static final long serialVersionUID = 1L;
+    
+    @EJB
     private ICadastrarService cadastrarService;
     private String rg;
 
