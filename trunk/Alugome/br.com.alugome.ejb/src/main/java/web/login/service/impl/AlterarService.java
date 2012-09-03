@@ -14,24 +14,13 @@ import web.login.service.IAlterarService;
  *
  * @author dmoreira
  */
-@Local(IAlterarService.class)
+
 @Stateless
+@Local(IAlterarService.class)
 public class AlterarService implements IAlterarService{
     
     @EJB
     private IAlterarDAO alterarDAO;
 
-    /**
-     * @return the alterarDAO
-     */
-    public IAlterarDAO getAlterarDAO() {
-        return alterarDAO;
-    }
-
-    /**
-     * @param alterarDAO the alterarDAO to set
-     */
-    public void setAlterarDAO(IAlterarDAO alterarDAO) {
-        this.alterarDAO = alterarDAO;
-    }
+    
 }

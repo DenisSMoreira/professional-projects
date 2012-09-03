@@ -4,7 +4,6 @@
  */
 package web.login.dao;
 
-import javax.ejb.Local;
 import web.comum.dao.IDAO;
 
 /**
