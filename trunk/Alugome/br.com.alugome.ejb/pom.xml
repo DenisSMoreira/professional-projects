@@ -171,6 +171,11 @@
             <version>3.2.0.Final</version>
         </dependency>
         <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>br.com.alugome.core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <artifactId>javaee-api</artifactId>
             <groupId>javax</groupId>
             <type>jar</type>
