@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.0"
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+    <application>
+<!--        <resource-bundle>
+            <base-name>web.login.resource.AutenticacaoResources</base-name>
+            <var>AutenticacaoResources</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>web.login.resource.AlterarsenhaResources</base-name>
+            <var>AlterarsenhaResources</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>web.login.resource.ApplicationResources</base-name>
+            <var>ApplicationResources</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>web.login.resource.CadastrarsenhaResources</base-name>
+            <var>CadastrarsenhaResources</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>web.login.resource.DesbloquearsenhaResources</base-name>
+            <var>DesbloquearsenhaResources</var>
+        </resource-bundle>  
+        <resource-bundle>
+            <base-name>web.login.resource.RecuperarSenhaResources</base-name>
+            <var>RecuperarSenhaResources</var>
+        </resource-bundle>-->
+    
+   
+        <locale-config>
+            <default-locale>pt</default-locale>
+            <supported-locale>en</supported-locale>
+        </locale-config>
+ 
+
+    </application>  
+    
+<!--    <lifecycle> 
+        <phase-listener>web.comum.session.listener.PhaseListener</phase-listener>
+    </lifecycle>-->
+
+</faces-config>

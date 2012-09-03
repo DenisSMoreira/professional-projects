@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="Telas/login/desbloquearsenha/DesbloquearUsuarioConclusao.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="Telas/login/recuperarsenha/RecuperarSenha.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="Telas/login/desbloquearsenha/DesbloquearUsuarioNovaSenha.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="Telas/login/alterarsenha/AlterarSenha.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="Telas/login/cadastrarsenha/CadastrarSenhaConfirmacao.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="Telas/comum/Template.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="*" x="129" y="22" zoom="true"/>
+        <Node id="Telas/login/autenticacao/MensagemAutenticacao.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="Telas/login/recuperarsenha/RecuperarSenhaPerguntaSecreta.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="Telas/login/autenticacao/Autenticacao.xhtml" x="645" y="28" zoom="true"/>
+        <Node id="Telas/login/recuperarsenha/RecuperarSenhaConfirmacao.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="Telas/login/desbloquearsenha/DesbloquarUsuarioPerguntaSecreta.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="Telas/login/recuperarsenha/RecuperarSenhaConclusao.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="Telas/login/cadastrarsenha/CadastrarSenha.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="Telas/home/home.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="Telas/home/homeFake.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="Telas/login/alterarsenha/AlterarSenhaConfirmacao.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="Telas/login/cadastrarsenha/CadastrarSenhaConclusao.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="Telas/login/desbloquearsenha/DesbloquearUsuario.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="Telas/comum/Erro.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="Telas/configuracao/aparencia/MenuAparencia.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="Telas/login/alterarsenha/AlterarSenhaConclusacao.xhtml" x="1650" y="150" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>
