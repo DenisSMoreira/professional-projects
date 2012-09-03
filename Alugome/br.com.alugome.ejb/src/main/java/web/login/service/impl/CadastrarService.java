@@ -14,26 +14,15 @@ import web.login.service.ICadastrarService;
  *
  * @author dmoreira
  */
-@Local(ICadastrarService.class)
+
 @Stateless
+@Local(ICadastrarService.class)
 public class CadastrarService implements ICadastrarService{
 
    @EJB
    private ICadastrarDAO cadastrarDAO;
 
-    /**
-     * @return the cadastrarDAO
-     */
-    public ICadastrarDAO getCadastrarDAO() {
-        return cadastrarDAO;
-    }
-
-    /**
-     * @param cadastrarDAO the cadastrarDAO to set
-     */
-    public void setCadastrarDAO(ICadastrarDAO cadastrarDAO) {
-        this.cadastrarDAO = cadastrarDAO;
-    }
+   
 
    
 }

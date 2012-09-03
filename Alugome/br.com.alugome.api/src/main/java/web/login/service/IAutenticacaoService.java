@@ -5,7 +5,6 @@
 package web.login.service;
 
 import web.entitys.Login;
-import web.comum.excpetion.BaseException;
 
 
 
@@ -16,7 +15,7 @@ import web.comum.excpetion.BaseException;
 public interface IAutenticacaoService {
  
     
-    Login validaLogin(String usuario) throws BaseException;
+    Login validaLogin(String usuario) throws Exception;
     
   
    

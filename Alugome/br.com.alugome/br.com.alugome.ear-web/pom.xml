@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>br.com.alugome</artifactId>
-    <groupId>alugome</groupId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
-
-  <groupId>br.com.alugome</groupId>
+ 
+  <groupId>alugome</groupId>
   <artifactId>br.com.alugome.ear-web</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>ear</packaging>
@@ -42,7 +37,7 @@
   </build>
  <dependencies>
         <dependency>
-            <groupId>br.com.alugome</groupId>
+            <groupId>alugome</groupId>
             <artifactId>br.com.alugome.web</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>war</type>

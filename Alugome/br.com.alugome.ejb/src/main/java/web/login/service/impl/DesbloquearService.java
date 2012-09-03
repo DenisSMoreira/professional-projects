@@ -14,24 +14,13 @@ import web.login.service.IDesbloquearService;
  *
  * @author dmoreira
  */
-@Local(IDesbloquearService.class)
+
 @Stateless
+@Local(IDesbloquearService.class)
 public class DesbloquearService implements IDesbloquearService{
     
     @EJB
     private IDesbloquearDAO desbloquearDAO;
 
-    /**
-     * @return the desbloquearDAO
-     */
-    public IDesbloquearDAO getDesbloquearDAO() {
-        return desbloquearDAO;
-    }
-
-    /**
-     * @param desbloquearDAO the desbloquearDAO to set
-     */
-    public void setDesbloquearDAO(IDesbloquearDAO desbloquearDAO) {
-        this.desbloquearDAO = desbloquearDAO;
-    }
+   
 }

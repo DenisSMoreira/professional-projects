@@ -14,24 +14,13 @@ import web.login.service.IRecuperarService;
  *
  * @author dmoreira
  */
-@Local(IRecuperarService.class)
+
 @Stateless
+@Local(IRecuperarService.class)
 public class RecuperarService implements IRecuperarService {
 
     @EJB
     private IRecuperarDAO recuperarDAO;
 
-    /**
-     * @return the recuperarDAO
-     */
-    public IRecuperarDAO getRecuperarDAO() {
-        return recuperarDAO;
-    }
-
-    /**
-     * @param recuperarDAO the recuperarDAO to set
-     */
-    public void setRecuperarDAO(IRecuperarDAO recuperarDAO) {
-        this.recuperarDAO = recuperarDAO;
-    }
+   
 }
