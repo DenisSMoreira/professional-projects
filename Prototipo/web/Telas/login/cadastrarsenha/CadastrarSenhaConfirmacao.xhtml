@@ -1,0 +1,89 @@
+
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core" >
+    
+    <h:head>
+
+        <title>Cadastrar Senha</title>
+    </h:head>
+
+    <h:body>
+        <p:ajaxStatus style="width:16px;height:16px;" id="ajaxStatusPanel"> 
+    <f:facet name="start">  
+ <p:graphicImage value="/images/ajaxloadingbar.gif" />  
+    </f:facet>  
+      
+    <f:facet name="complete">  
+        <h:outputText value="" />  
+    </f:facet>  
+       </p:ajaxStatus>      
+<h:form id="form2">  
+    <p:panel id="panel" header="Cadastrar Usuário - Nova senha" style="width: 600px; margin: 10% auto;">
+  
+        <p:messages id="msgs" />
+    
+        <h:panelGrid id="grid" columns="3" cellpadding="5" >  
+
+         <h:outputText value="Tipo usuário: " />  
+         <h:outputText value="Funcionario" /> 
+         <h:outputText value="" />   
+         
+             <h:outputText value="Usuário: " />  
+         <h:outputText value="Usuario Teste" /> 
+         <h:outputText value="" />   
+     
+        <h:outputText value="RG/RA *" />  
+        <h:outputText value="99.999.999-99" /> 
+        <h:outputText value="" />   
+        
+        <h:outputText value="Codigo Escola: *" />  
+        <h:outputText value="001212" />
+        <h:outputText value="" />   
+
+        <h:outputText value="Data Nascimento: *" />  
+        <h:outputText value="99/99/9999" />
+        <h:outputText value="" />   
+       
+        <h:outputText value="Pergunta Secreta: "  />  
+        <p:selectOneMenu value="2" id="pergunta" requiredMessage="Campo necessário." >  
+            <f:selectItem itemLabel="Carro preferido?" itemValue="0" />  
+            <f:selectItem itemLabel="Primeiro namorado?" itemValue="1" />  
+            <f:selectItem itemLabel="Primeiro Carro" itemValue="2" />  
+            <f:selectItem itemLabel="Nome da cidade preferida" itemValue="3" />  
+        </p:selectOneMenu>  
+        <p:message for="pergunta" display="text" />   
+        
+        <h:outputLabel for="resposta" value="Resposta*" />  
+            <p:inputText id="resposta"   
+                    value="TESTE"   
+                    required="true" label="Usuario"  requiredMessage="Campo necessário." >   
+                <f:validateLength minimum="5"  />  
+            </p:inputText>  
+        <p:message for="resposta" display="text" />  
+        
+        <h:outputText value="Nova senha: *" />  
+        <p:password id="textOnly4" required="true" feedback="true" match="conPassword" requiredMessage="Campo necessário."  converterMessage="Password não são iguais"
+                    promptLabel="Por favor digite um password" weakLabel="Fraca"  
+                    goodLabel="Media" strongLabel="Otima" validatorMessage="Password não são iguais" /> 
+        <p:message id="textOnlyMessage4" for="textOnly4" display="text" />  
+        
+        <h:outputText value="Confirme a senha: *" />  
+        <p:password id="conPassword" required="true" requiredMessage="Campo necessário." converterMessage="Password incorreto" />  
+        <p:message id="textOnlyMessage5" for="conPassword" display="text" />  
+
+    </h:panelGrid> 
+  
+        <p:commandButton id="confirmar" value="Confirmar" action="#{cadConfirmacao.conclusao()}" ajax="false" />  
+        <p:commandButton id="voltar" value="Voltar" />  
+   </p:panel>  
+</h:form>  				
+    </h:body>
+</html>
+

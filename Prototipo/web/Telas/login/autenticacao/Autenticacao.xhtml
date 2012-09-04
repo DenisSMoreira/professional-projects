@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core" >
+   
+ 
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Autenticacao</title>
+    </h:head>
+
+    <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" template="../../comum/Template.xhtml" >
+        <ui:define name="content">
+            <h:body >
+                <p:ajaxStatus style="width:16px;height:16px;" id="ajaxStatusPanel">  
+                    <f:facet name="start"> 
+                        <p:graphicImage value="/Images/ajaxloadingbar.gif" />  
+                    </f:facet>  
+
+                    <f:facet name="complete">  
+                        <h:outputText value="" />  
+                    </f:facet>  
+                </p:ajaxStatus>
+
+                <h:form id="form">  
+                    <p:panel id="panel" header="Sistema Administrativo - Autenticao" style="width: 430px; margin: 15% auto;">  
+                        <p:messages id="msgs" />
+                        <h:panelGrid columns="3" cellpadding="5">  
+                            <h:outputLabel for="cpf" value="CPF:*" />  
+                            <p:inputMask id="cpf"  mask="99.999.999-99" value="#{autenticacao.usuario}" required="true" label="CPF" maxlength="40" requiredMessage="CPF necessário." validatorMessage="CPF necessário." >   
+                                <f:validateLength minimum="13"  maximum="13"/>  
+                            </p:inputMask>  
+                            <p:message for="cpf" display="text" />  
+                            <h:outputLabel for="senha" value="Senha:*" />  
+                            <p:password id="senha" value="#{autenticacao.senha}" maxlength="40" label="Senha" required="true"  requiredMessage="Senha necessária."  > 
+                                <f:validateLength minimum="5"  maximum="40" /> 
+                            </p:password>  
+                            <p:message for="senha"  display="text"  />  
+                        </h:panelGrid>  
+                        <p:commandButton value="Acessar" action="#{autenticacao.verificarAutenticacao()}" id="btnGlobal" update="msgs" />  
+                        <br/>
+                    </p:panel>  
+                </h:form>
+
+                <h:form>
+                    <p:panel id="panel"  >  
+                        <h:commandLink value="Esqueceu sua senha?" action="#{autenticacao.forwardRecuperar()}" style="font-size: small; margin-top: 30px" />
+                    </p:panel>
+                </h:form>  
+            </h:body>
+        </ui:define>
+    </ui:composition>
+
+</html>
+
