@@ -4,15 +4,10 @@
  */
 package br.com.quets.entity;
 
-import java.util.List;
-
 /**
  *
  * @author glucca
  */
-public class SubGrupo {
-
-    private Long codigo;
-    private String descricao;
-    private List<UsuarioProvisorio> listaUsuarioProvisorio;
+public class TipoCliente {
+    
 }

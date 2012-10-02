@@ -4,6 +4,7 @@
  */
 package br.com.quets.entity;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,4 +18,6 @@ public class Login {
     private String usuario;
     private Integer quantidadeAcesso;
     private List<Perfil> listaPerfis;
+    private Date ultimoAcesso;
+    private Date ultimaAlteracaoSenha;
 }

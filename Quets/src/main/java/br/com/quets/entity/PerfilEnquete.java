@@ -9,5 +9,7 @@ package br.com.quets.entity;
  * @author Guilhe
  */
 public class PerfilEnquete {
-    
+        
+    private Long codigo;
+    private String descricao;
 }

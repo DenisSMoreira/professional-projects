@@ -12,6 +12,8 @@ import java.util.List;
  */
 public class Grupo {
     
+    private Long codigo;
+    private String descricao;
     private List<UsuarioProvisorio> listaUsuario;
     private List<SubGrupo> listaSubGrupo;
     
