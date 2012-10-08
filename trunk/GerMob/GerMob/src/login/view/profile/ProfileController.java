@@ -43,6 +43,8 @@ public class ProfileController extends AnchorPane implements Initializable {
     @FXML 
     private Button update;  
     @FXML 
+    private Button next;  
+    @FXML 
     private Label success;
     
     private Aplication application;
@@ -91,10 +93,19 @@ public class ProfileController extends AnchorPane implements Initializable {
         loggedUser.setAddress(address.getText());
         authenticator.updateUser(loggedUser);
         animateMessage();
+        next.setOpacity(1);
+        next.setDefaultButton(true);
+        update.setOpacity(0.4);
+        update.setDefaultButton(false);
+    
+    }
+    
+    public void processNext(ActionEvent event) {
+    	application.gotoPrincipal();
     }
 
     private void animateMessage() {
-        FadeTransition ft = new FadeTransition(Duration.millis(3000), success);
+        FadeTransition ft = new FadeTransition(Duration.millis(2000), success);
         ft.setFromValue(0.0);
         ft.setToValue(1);
         ft.play();
