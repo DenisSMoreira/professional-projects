@@ -16,7 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import login.security.Authenticator;
 import login.view.login.LoginController;
-import login.view.principal.IssueTrackingLiteController;
+import login.view.principal.IssueTrackingController;
 import login.view.profile.ProfileController;
 
 /**
@@ -88,7 +88,7 @@ public class Aplication extends Application {
     
     public void gotoPrincipal() {
         try {
-        	IssueTrackingLiteController principal = (IssueTrackingLiteController) replaceSceneContent("/resource/fxml/IssueTrackingLite.fxml");
+        	IssueTrackingController principal = (IssueTrackingController) replaceSceneContent("/resource/fxml/IssueTracking.fxml");
         	principal.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Aplication.class.getName()).log(Level.SEVERE, null, ex);
