@@ -16,6 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import login.security.Authenticator;
 import login.view.login.LoginController;
+import login.view.principal.IssueTrackingLiteController;
 import login.view.profile.ProfileController;
 
 /**
@@ -24,8 +25,8 @@ import login.view.profile.ProfileController;
 public class Aplication extends Application {
 
     private Stage stage;
-    private final double MINIMUM_WINDOW_WIDTH = 390.0;
-    private final double MINIMUM_WINDOW_HEIGHT = 500.0;
+    private final double MINIMUM_WINDOW_WIDTH = 750.0;
+    private final double MINIMUM_WINDOW_HEIGHT = 550.0;
     private static final Authenticator authenticator = Authenticator.getInstance();
     
     /**
@@ -43,6 +44,7 @@ public class Aplication extends Application {
             stage.setTitle("Login");
             stage.setMinHeight(MINIMUM_WINDOW_HEIGHT);
             gotoLogin();
+            
             primaryStage.show();
         } catch (Exception ex) {
             Logger.getLogger(Aplication.class.getName()).log(Level.SEVERE, null, ex);
@@ -79,6 +81,15 @@ public class Aplication extends Application {
         try {
             LoginController login = (LoginController) replaceSceneContent("/resource/fxml/Login.fxml");
             login.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Aplication.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void gotoPrincipal() {
+        try {
+        	IssueTrackingLiteController principal = (IssueTrackingLiteController) replaceSceneContent("/resource/fxml/IssueTrackingLite.fxml");
+        	principal.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Aplication.class.getName()).log(Level.SEVERE, null, ex);
         }
