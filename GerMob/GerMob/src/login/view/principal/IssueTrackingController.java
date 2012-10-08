@@ -4,11 +4,15 @@
 package login.view.principal;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.animation.FadeTransition;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -25,6 +29,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -32,14 +37,18 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Region;
+import javafx.util.Callback;
+import javafx.util.Duration;
 import login.model.Issue;
+import login.model.Issue.IssuePriority;
 import login.model.Issue.IssueStatus;
 import login.model.ObservableIssue;
 import login.service.principal.TrackingService;
 import login.service.principal.impl.TrackingServiceStub;
 import login.view.main.Aplication;
 
-public class IssueTrackingLiteController  extends AnchorPane  implements Initializable {
+public class IssueTrackingController  extends AnchorPane implements Initializable {
 
     @FXML
     Button newIssue;
@@ -52,6 +61,10 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
     @FXML
     TableColumn<ObservableIssue, String> colName;
     @FXML
+    TableColumn<ObservableIssue, String> colDate;
+    @FXML
+    TableColumn<ObservableIssue, IssuePriority> colPriority;
+    @FXML
     TableColumn<ObservableIssue, IssueStatus> colStatus;
     @FXML
     TableColumn<ObservableIssue, String> colSynopsis;
@@ -59,47 +72,60 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
     ListView<String> list;
     @FXML
     TextField synopsis;
-
     private String displayedBugId; // the id of the bug displayed in the details section.
-    private String displayedBugProject; // the name of the project of the bug displayed in the detailed section.
+    private String displayedBugProject; // the name of the project of the bug displayed in the details section.
+    
+	private Aplication aplication;
+	
     @FXML
-    Label displayedIssueLabel; // the displayedIssueLabel will contain a concatenation of the 
-                               // the project name and the bug id.
+    Label displayedIssueLabel; // the displayedIssueLabel will contain a concatenation
+                               // of the project name and the bug id.
     @FXML
     AnchorPane details;
     @FXML
+    Region titleLine;
+    @FXML
     TextArea descriptionValue;
+    @FXML
+    TextField activityField;
+    @FXML
+    TextField statusValue;
+    @FXML
+    TextField priorityValue;
+    @FXML
+    TextField creationTimeValue;
+    @FXML
+    Label messageBar;
     ObservableList<String> projectsView = FXCollections.observableArrayList();
     TrackingService model = null;
-    private TextField statusValue = new TextField();
     final ObservableList<ObservableIssue> tableContent = FXCollections.observableArrayList();
-   
-    private Aplication application;
 
-    
-    public void setApp(Aplication application){
-        this.application = application;
-    }
-    
-    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rsrcs) {
-        assert colName != null : "fx:id=\"colName\" was not injected: check your FXML file 'IssueTrackingLite.fxml'.";
-        assert colStatus != null : "fx:id=\"colStatus\" was not injected: check your FXML file 'IssueTrackingLite.fxml'.";
-        assert colSynopsis != null : "fx:id=\"colSynopsis\" was not injected: check your FXML file 'IssueTrackingLite.fxml'.";
-        assert deleteIssue != null : "fx:id=\"deleteIssue\" was not injected: check your FXML file 'IssueTrackingLite.fxml'.";
-        assert descriptionValue != null : "fx:id=\"descriptionValue\" was not injected: check your FXML file 'IssueTrackingLite.fxml'.";
-        assert details != null : "fx:id=\"details\" was not injected: check your FXML file 'IssueTrackingLite.fxml'.";
-        assert displayedIssueLabel != null : "fx:id=\"displayedIssueLabel\" was not injected: check your FXML file 'IssueTrackingLite.fxml'.";
-        assert newIssue != null : "fx:id=\"newIssue\" was not injected: check your FXML file 'IssueTrackingLite.fxml'.";
-        assert saveIssue != null : "fx:id=\"saveIssue\" was not injected: check your FXML file 'IssueTrackingLite.fxml'.";
-        assert synopsis != null : "fx:id=\"synopsis\" was not injected: check your FXML file 'IssueTrackingLite.fxml'.";
-        assert table != null : "fx:id=\"table\" was not injected: check your FXML file 'IssueTrackingLite.fxml'.";
-        assert list != null : "fx:id=\"list\" was not injected: check your FXML file 'IssueTrackingLite.fxml'.";
-        
+        assert activityField != null : "fx:id=\"activityField\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert colDate != null : "fx:id=\"colDate\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert colName != null : "fx:id=\"colName\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert colPriority != null : "fx:id=\"colPriority\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert colStatus != null : "fx:id=\"colStatus\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert colSynopsis != null : "fx:id=\"colSynopsis\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert creationTimeValue != null : "fx:id=\"creationTimeValue\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert deleteIssue != null : "fx:id=\"deleteIssue\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert descriptionValue != null : "fx:id=\"descriptionValue\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert details != null : "fx:id=\"details\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert displayedIssueLabel != null : "fx:id=\"displayedIssueLabel\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert messageBar != null : "fx:id=\"messageBar\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert newIssue != null : "fx:id=\"newIssue\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert priorityValue != null : "fx:id=\"priorityValue\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert saveIssue != null : "fx:id=\"saveIssue\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert statusValue != null : "fx:id=\"statusValue\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert synopsis != null : "fx:id=\"synopsis\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert table != null : "fx:id=\"table\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert titleLine != null : "fx:id=\"titleLine\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+        assert list != null : "fx:id=\"list\" was not injected: check your FXML file 'IssueTracking.fxml'.";
+
         System.out.println(this.getClass().getSimpleName() + ".initialize");
         configureButtons();
         configureDetails();
@@ -110,7 +136,6 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
             list.getSelectionModel().selectedItemProperty().addListener(projectItemSelected);
             displayedProjectNames.addListener(projectNamesListener);
         }
-   
     }
 
     /**
@@ -127,6 +152,7 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
                 table.getSelectionModel().clearSelection();
                 table.getSelectionModel().select(issue);
             }
+            displayMessage("New issue created for " + selectedProject);
         }
     }
 
@@ -145,6 +171,7 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
             for (Object o : selectedIssue) {
                 if (o instanceof ObservableIssue) {
                     model.deleteIssue(((ObservableIssue) o).getId());
+                    displayMessage("Issue deleted: " + ((ObservableIssue) o).getId());
                 }
             }
             table.getSelectionModel().clearSelection();
@@ -160,9 +187,15 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
         final ObservableIssue ref = getSelectedIssue();
         final Issue edited = new DetailsData();
         SaveState saveState = computeSaveState(edited, ref);
-        if (saveState == SaveState.UNSAVED) {
+        if (saveState == SaveState.INVALID) {
+            displayMessage("Invalid Data: cannot save issue");
+        } else if (saveState == SaveState.UNSAVED) {
             model.saveIssue(ref.getId(), edited.getStatus(),
-                    edited.getSynopsis(), edited.getDescription());
+                    edited.getPriority(), edited.getSynopsis(),
+                    edited.getDescription());
+            displayMessage("Issue saved");
+        } else {
+            displayMessage("No change needs saving");
         }
         // We refresh the content of the table because synopsis and/or description
         // are likely to have been modified by the user.
@@ -178,6 +211,32 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
         updateSaveIssueButtonState();
     }
     
+    FadeTransition messageTransition = null;
+
+    public void displayMessage(String message) {
+        if (messageBar != null) {
+            if (messageTransition != null) {
+                messageTransition.stop();
+            } else {
+                messageTransition = new FadeTransition(Duration.millis(2000), messageBar);
+                messageTransition.setFromValue(1.0);
+                messageTransition.setToValue(0.0);
+                messageTransition.setDelay(Duration.millis(1000));
+                messageTransition.setOnFinished(new EventHandler<ActionEvent>() {
+
+                    @Override
+                    public void handle(ActionEvent event) {
+                        messageBar.setVisible(false);
+                    }
+                });
+            }
+            messageBar.setText(message);
+            messageBar.setVisible(true);
+            messageBar.setOpacity(1.0);
+            messageTransition.playFromStart();
+        }
+    }
+
     private void configureButtons() {
         if (newIssue != null) {
             newIssue.setDisable(true);
@@ -189,7 +248,7 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
             deleteIssue.setDisable(true);
         }
     }
-    
+
     // An observable list of project names obtained from the model.
     // This is a live list, and we will react to its changes by removing
     // and adding project names to/from our list widget.
@@ -309,6 +368,12 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
             if (statusValue != null) {
                 statusValue.setText(selectedIssue.getStatus().toString());
             }
+            if (priorityValue != null) {
+                priorityValue.setText(selectedIssue.getPriority().toString());
+            }
+            if (creationTimeValue != null) {
+                creationTimeValue.setText(formatDate(selectedIssue.getDate()));
+            }
             if (descriptionValue != null) {
                 descriptionValue.selectAll();
                 descriptionValue.cut();
@@ -351,11 +416,8 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
     private final class DetailsData implements Issue {
 
         @Override
-        public String getId() {
-            if (displayedBugId == null || isEmpty(displayedIssueLabel.getText())) {
-                return null;
-            }
-            return displayedBugId;
+        public long getDate() {
+            return getSelectedIssue().getDate();
         }
 
         @Override
@@ -365,7 +427,23 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
             }
             return IssueStatus.valueOf(statusValue.getText().trim());
         }
-        
+
+        @Override
+        public IssuePriority getPriority() {
+            if (priorityValue == null || isEmpty(priorityValue.getText())) {
+                return null;
+            }
+            return IssuePriority.valueOf(priorityValue.getText().trim());
+        }
+
+        @Override
+        public String getId() {
+            if (displayedBugId == null || isEmpty(displayedIssueLabel.getText())) {
+                return null;
+            }
+            return displayedBugId;
+        }
+
         @Override
         public String getProjectName() {
             if (displayedBugProject == null || isEmpty(displayedIssueLabel.getText())) {
@@ -395,6 +473,9 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
         try {
             // These fields are not editable - so if they differ they are invalid
             // and we cannot save.
+            if (!equal(edited.getDate(), issue.getDate())) {
+                return SaveState.INVALID;
+            }
             if (!equal(edited.getId(), issue.getId())) {
                 return SaveState.INVALID;
             }
@@ -404,6 +485,9 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
 
             // If these fields differ, the issue needs saving.
             if (!equal(edited.getStatus(), issue.getStatus())) {
+                return SaveState.UNSAVED;
+            }
+            if (!equal(edited.getPriority(), issue.getPriority())) {
                 return SaveState.UNSAVED;
             }
             if (!equal(edited.getSynopsis(), issue.getSynopsis())) {
@@ -445,26 +529,29 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
         }
     }
 
+    private String formatDate(long date) {
+        final SimpleDateFormat format = new SimpleDateFormat();
+        return format.format(new Date(date));
+    }
+    
     // Configure the table widget: set up its column, and register the
     // selection changed listener.
     private void configureTable() {
         colName.setCellValueFactory(new PropertyValueFactory<ObservableIssue, String>("id"));
-        colSynopsis.setCellValueFactory(new PropertyValueFactory<ObservableIssue, String>("synopsis"));
+        colDate.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<ObservableIssue, String>, ObservableValue<String>>() {
+
+            @Override
+            public ObservableValue<String> call(CellDataFeatures<ObservableIssue, String> param) {
+                // The creation date will never change...
+                Issue issue = (Issue) param.getValue();
+                long creationTime = issue.getDate();
+                String date = formatDate(creationTime);
+                return new SimpleStringProperty(date);
+            }
+        });
+        colPriority.setCellValueFactory(new PropertyValueFactory<ObservableIssue, IssuePriority>("priority"));
         colStatus.setCellValueFactory(new PropertyValueFactory<ObservableIssue, IssueStatus>("status"));
-
-        // In order to limit the amount of setup in Getting Started we set the width
-        // of the 3 columns programmatically but one can do it from SceneBuilder.
-        colName.setPrefWidth(75);
-        colStatus.setPrefWidth(75);
-        colSynopsis.setPrefWidth(443);
-
-        colName.setMinWidth(75);
-        colStatus.setMinWidth(75);
-        colSynopsis.setMinWidth(443);
-
-        colName.setMaxWidth(750);
-        colStatus.setMaxWidth(750);
-        colSynopsis.setMaxWidth(4430);
+        colSynopsis.setCellValueFactory(new PropertyValueFactory<ObservableIssue, String>("synopsis"));
 
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
@@ -513,6 +600,7 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
             projectSelected(newValue);
         }
     };
+
 
     // Called when a project is unselected.
     private void projectUnselected(String oldProjectName) {
@@ -566,4 +654,9 @@ public class IssueTrackingLiteController  extends AnchorPane  implements Initial
             });
         }
     }
+
+	public void setApp(Aplication aplication) {
+	  this.aplication = aplication;
+		
+	}
 }

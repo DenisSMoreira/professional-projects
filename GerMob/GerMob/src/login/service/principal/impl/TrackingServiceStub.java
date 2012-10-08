@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
@@ -16,6 +17,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.MapChangeListener;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
+import login.model.Issue.IssuePriority;
 import login.model.Issue.IssueStatus;
 import login.model.ObservableIssue;
 import login.service.principal.TrackingService;
@@ -28,7 +30,7 @@ public class TrackingServiceStub implements TrackingService {
     {
         final Map<String, ObservableList<String>> map = new TreeMap<String, ObservableList<String>>();
         projectsMap = FXCollections.observableMap(map);
-        for (String s : newList("Quets", "Ping Ming", "Bunisses", "Sokkyo")) {
+        for (String s : newList("Project1", "Project2", "Project3", "Project4")) {
             projectsMap.put(s, FXCollections.<String>observableArrayList());
         }
     }
@@ -51,12 +53,15 @@ public class TrackingServiceStub implements TrackingService {
 
     // A Issue stub.
     public final class IssueStub implements ObservableIssue {
+        private final SimpleLongProperty creationTime;
         private final SimpleStringProperty id;
         private final SimpleStringProperty projectName;
         private final SimpleStringProperty title;
         private final SimpleStringProperty description;
         private final SimpleObjectProperty<IssueStatus> status =
                 new SimpleObjectProperty<IssueStatus>(IssueStatus.NEW);
+        private final SimpleObjectProperty<IssuePriority> priority =
+                new SimpleObjectProperty<IssuePriority>(IssuePriority.MEDIUM);
 
         IssueStub(String projectName, String id) {
             this(projectName, id, null);
@@ -67,13 +72,24 @@ public class TrackingServiceStub implements TrackingService {
             assert ! issuesMap.containsKey(id);
             this.projectName = new SimpleStringProperty(projectName);
             this.id = new SimpleStringProperty(id);
+            this.creationTime = new SimpleLongProperty(System.currentTimeMillis());
             this.title = new SimpleStringProperty(title);
             this.description = new SimpleStringProperty("");
         }
 
         @Override
+        public long getDate() {
+            return creationTime.get();
+        }
+
+        @Override
         public IssueStatus getStatus() {
             return status.get();
+        }
+
+        @Override
+        public IssuePriority getPriority() {
+            return priority.get();
         }
 
         @Override
@@ -104,8 +120,17 @@ public class TrackingServiceStub implements TrackingService {
             this.description.set(description);
         }
 
+        private void setPriority(IssuePriority issuePriority) {
+            this.priority.set(issuePriority);
+        }
+
         private void setStatus(IssueStatus issueStatus) {
             this.status.set(issueStatus);
+        }
+
+        @Override
+        public ObservableValue<Number> dateProperty() {
+            return creationTime;
         }
 
         @Override
@@ -121,6 +146,11 @@ public class TrackingServiceStub implements TrackingService {
         @Override
         public ObservableValue<IssueStatus> statusProperty() {
             return status;
+        }
+
+        @Override
+        public ObservableValue<IssuePriority> priorityProperty() {
+            return priority;
         }
 
         @Override
@@ -159,30 +189,30 @@ public class TrackingServiceStub implements TrackingService {
         issuesMap = FXCollections.observableMap(map);
         issuesMap.addListener(issuesMapChangeListener);
         IssueStub ts;
-        ts = createIssueFor("Quets");
-        ts.setSynopsis("Desenvoler Layout - Quets");
-        ts.setDescription("Para: \"Guilherme\"");
-        ts = createIssueFor("Quets");
-        ts.setSynopsis("Desenvoler Analise - Quets");
-        ts.setDescription("Para: \"Denis Soares Moreira\"");
-        ts = createIssueFor("Ping Ming");
-        ts.setSynopsis("Desenvoler Layout");
-        ts.setDescription("Para: \"The Wanderings Of Oisin\".\nW. B. Yeats.");
-        ts = createIssueFor("Sokkyo");
-        ts.setSynopsis("TDesenvoler Layout");
-        ts.setDescription("Para: \"The Wanderings Of Oisin\".\nW. B. Yeats.");
-        ts = createIssueFor("Bunisses");
-        ts.setSynopsis("Desenvoler Layout");
-        ts.setDescription("Para: \"The Wanderings Of Oisin\".\nW. B. Yeats.");
-        ts = createIssueFor("Ping Ming");
-        ts.setSynopsis("Desenvoler Padrões");
-        ts.setDescription("Para: \"The Wanderings Of Oisin\".\nW. B. Yeats.");
-        ts = createIssueFor("Quets");
-        ts.setSynopsis("Desenvoler Prototipo");
-        ts.setDescription("Para: \"The Wanderings Of Oisin\".\nW. B. Yeats.");
-        ts = createIssueFor("Sokkyo");
-        ts.setSynopsis("Desenvoler UML");
-        ts.setDescription("Para: \"William Butler Yeats\".");
+        ts = createIssueFor("Project1");
+        ts.setSynopsis("We rode in sorrow, with strong hounds three");
+        ts.setDescription("From \"The Wanderings Of Oisin\".\nW. B. Yeats.");
+        ts = createIssueFor("Project1");
+        ts.setSynopsis("Bran, Sgeolan, and Lomair");
+        ts.setDescription("From \"The Wanderings Of Oisin\".\nW. B. Yeats.");
+        ts = createIssueFor("Project2");
+        ts.setSynopsis("On a morning misty and mild and fair");
+        ts.setDescription("From \"The Wanderings Of Oisin\".\nW. B. Yeats.");
+        ts = createIssueFor("Project4");
+        ts.setSynopsis("The mist-drops hung on the fragrant trees");
+        ts.setDescription("From \"The Wanderings Of Oisin\".\nW. B. Yeats.");
+        ts = createIssueFor("Project3");
+        ts.setSynopsis("And in the blossoms hung the bees");
+        ts.setDescription("From \"The Wanderings Of Oisin\".\nW. B. Yeats.");
+        ts = createIssueFor("Project2");
+        ts.setSynopsis("We rode in sadness above Lough Lean");
+        ts.setDescription("From \"The Wanderings Of Oisin\".\nW. B. Yeats.");
+        ts = createIssueFor("Project1");
+        ts.setSynopsis("For our best were dead on Gavra's green");
+        ts.setDescription("From \"The Wanderings Of Oisin\".\nW. B. Yeats.");
+        ts = createIssueFor("Project4");
+        ts.setSynopsis("The Wanderings of Oisin");
+        ts.setDescription("William Butler Yeats.");
     }
 
     private static <T> List<T> newList(T... items) {
@@ -223,10 +253,11 @@ public class TrackingServiceStub implements TrackingService {
 
     @Override
     public void saveIssue(String issueId, IssueStatus status,
-            String synopsis, String description) {
+            IssuePriority priority, String synopsis, String description) {
         IssueStub issue = getIssue(issueId);
         issue.setDescription(description);
         issue.setSynopsis(synopsis);
+        issue.setPriority(priority);
         issue.setStatus(status);
     }
 

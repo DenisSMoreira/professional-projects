@@ -4,6 +4,7 @@
 package login.service.principal;
 
 import javafx.collections.ObservableList;
+import login.model.Issue.IssuePriority;
 import login.model.Issue.IssueStatus;
 import login.model.ObservableIssue;
 
@@ -14,6 +15,7 @@ public interface TrackingService {
     public ObservableIssue getIssue(String tickectId);
     public ObservableIssue createIssueFor(String projectName);
     public void deleteIssue(String issueId);
-    public void saveIssue(String issueId, IssueStatus status,
+    public void saveIssue(String issueId,
+            IssueStatus status, IssuePriority priority,
             String synopsis, String description);
 }
