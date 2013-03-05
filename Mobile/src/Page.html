@@ -3,30 +3,112 @@
     <head>
         <title>Kitchen Sink</title>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-         <!--<meta charset="utf-8" />-->
+        <!--<meta charset="utf-8" />-->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-         <script src="jquery-1.7.2.min.js">
+        <script src="jquery-1.7.2.min.js">
         </script>
         <script src="jquery.mobile-1.2.0.min.js">
         </script>
-         <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+        <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+        <style>
+            .none {display: none !important}
+        </style>
         <script>
-          
+            function one(){
+                $('#one').removeClass('none');
+                $('#two').addClass('none');
+            }
+            function two(){
+                $('#one').addClass('none');
+                $('#two').removeClass('none');
+            }
         </script>        
     </head>
     <body>
-      <!-- Home -->
+        <!-- Home -->
         <div data-role="page" id="page1">
-            <div data-theme="a" data-role="header">
-                <h3>
-                    Header
-                </h3>
+            <div data-role="header">
+
+                <a href="Page_1.html"  data-icon="delete" data-transition="flow">
+                    Voltar
+                </a>
+
+                <h1>Editar</h1>
+                <a href="#" data-icon="check" data-theme="b">Proximo</a>
             </div>
-            <div data-role="content">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" class="ui-btn-active" onclick="one()" >One</a></li>
+                    <li><a href="#" onclick="two()">Two</a></li>
+                    <li><a href="#" onclick="">Three</a></li>
+                </ul>
+            </div>
+            <div id="one" >
+                <form>
+                    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                        <legend>Selecione:</legend>
+                        <input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6a" value="on" checked="checked">
+                        <label for="radio-choice-t-6a">One</label>
+                        <input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6b" value="off">
+                        <label for="radio-choice-t-6b">Two</label>
+                        <input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6c" value="other">
+                        <label for="radio-choice-t-6c">Three</label>
+                    </fieldset>
+                </form>
+                <table data-role="table" style="font-size: 12px !important; width: 100% !important" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="c" data-column-btn-text="Columns to display..." data-column-popup-theme="c">
+                    <thead>
+                        <tr class="ui-bar-d">
+                            <th data-priority="2">Rank</th>
+                            <th>Movie Title</th>
+                            <th data-priority="3">Year</th>
+                            <th data-priority="1"><abbr title="Rotten Tomato Rating">Rating</abbr></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <td><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">Citizen Kane</a></td>
+                            <td>1941</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td><a href="http://en.wikipedia.org/wiki/Casablanca_(film)" data-rel="external">Casablanca</a></td>
+                            <td>1942</td>
+                            <td>97%</td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+                            <td><a href="http://en.wikipedia.org/wiki/The_Godfather" data-rel="external">The Godfather</a></td>
+                            <td>1972</td>
+                            <td>97%</td>
+                        </tr>
+                        <tr>
+                            <th>4</th>
+                            <td><a href="http://en.wikipedia.org/wiki/Gone_with_the_Wind_(film)" data-rel="external">Gone with the Wind</a></td>
+                            <td>1939</td>
+                            <td>96%</td>
+                        </tr>
+                        <tr>
+                            <th>5</th>
+                            <td><a href="http://en.wikipedia.org/wiki/Lawrence_of_Arabia_(film)" data-rel="external">Lawrence of Arabia</a></td>
+                            <td>1962</td>
+                            <td>94%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div data-theme="a" data-role="footer" data-position="fixed">
+                    <h3>
+                        Footer
+                    </h3>
+                </div>
+            </div>
+            <div id="two" class="none" >
+                <legend>Selecione:</legend>
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
-                    <li data-role="list-divider" role="heading">
+                    <li data-role="list-divider" role="heading" >
                         Divider
                     </li>
                     <li data-theme="c">
@@ -39,42 +121,23 @@
                             Button
                         </a>
                     </li>
+                    <li data-role="list-divider" role="heading" >
+                        Divider
+                    </li>
+                    <li data-role="list-divider" role="heading" >
+                        Divider
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page1" data-transition="slide">
+                            Button
+                        </a>
+                    </li>
                     <li data-theme="c">
                         <a href="#page1" data-transition="slide">
                             Button
                         </a>
                     </li>
                 </ul>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="toggleswitch1">
-                        </label>
-                        <select name="toggleswitch1" id="toggleswitch1" data-theme="" data-role="slider">
-                            <option value="off">
-                                Off
-                            </option>
-                            <option value="on">
-                                On
-                            </option>
-                        </select>
-                    </fieldset>
-                </div>
-                <a data-role="button" href="#page1">
-                    Button
-                </a>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="slider1">
-                            Value:
-                        </label>
-                        <input type="range" name="slider" value="50" min="0" max="100" data-highlight="false" />
-                    </fieldset>
-                </div>
-            </div>
-            <div data-theme="a" data-role="footer" data-position="fixed">
-                <h3>
-                    Footer
-                </h3>
             </div>
         </div>
     </body>
