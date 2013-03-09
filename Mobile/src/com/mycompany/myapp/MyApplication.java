@@ -7,6 +7,7 @@ import com.codename1.ui.Display;
 import com.codename1.ui.Form;
 import com.codename1.ui.Label;
 import com.codename1.ui.layouts.BorderLayout;
+import com.codename1.ui.layouts.LayeredLayout;
 import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.util.Resources;
 import java.io.IOException;
@@ -30,12 +31,12 @@ public class MyApplication {
             return;
         }
         Form hi = new Form();
-         Container cnt = new Container(new BorderLayout());
+         Container cnt = new Container(new LayeredLayout());
          
         WebBrowser wb = new WebBrowser();
         
         wb.setURL("jar:///Page.html");  
-        cnt.addComponent(BorderLayout.NORTH, wb);
+        cnt.addComponent(wb);
         hi.addComponent(cnt);
         hi.show();
     }
