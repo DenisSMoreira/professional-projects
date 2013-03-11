@@ -30,7 +30,8 @@ public class MyApplication {
             current.show();
             return;
         }
-        Form hi = new Form(new LayeredLayout());
+        Form hi = new Form();
+        hi.setLayout(new LayeredLayout());
          Container cnt = new Container(new LayeredLayout());
          
         WebBrowser wb = new WebBrowser();
