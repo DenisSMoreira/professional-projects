@@ -26,118 +26,149 @@
             }
         </script>        
     </head>
-    <body>
+    <body style="font-size: 12px !important;">
         <!-- Home -->
         <div data-role="page" id="page1">
             <div data-role="header">
 
                 <a href="Page_1.html"  data-icon="delete" data-transition="flow">
-                    Voltar
+                    voltar
                 </a>
 
-                <h1>Editar</h1>
-                <a href="#" data-icon="check" data-theme="b">Proximo</a>
+                <h1>Cliente</h1>
+                <a href="#" data-icon="check" data-theme="b">principal</a>
             </div>
-            <div data-role="navbar">
+            <div data-role="navbar" >
                 <ul>
-                    <li><a href="#" class="ui-btn-active" onclick="one()" >One</a></li>
-                    <li><a href="#" onclick="two()">Two</a></li>
-                    <li><a href="#" onclick="">Three</a></li>
+                    <li><a href="#" class="ui-btn-active" onclick="one()" >Cadastrar</a></li>
+                    <li><a href="#" onclick="two()">Relatorio</a></li>
                 </ul>
             </div>
             <div id="one" >
                 <form>
-                    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
-                        <legend>Selecione:</legend>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <label for="textinput1" style="font-size: 12px !important;">
+                                Nome:
+                            </label>
+                            <input name="" id="textinput1" placeholder="" value="" type="text">
+                            <br/>
+                            <label for="textinput2" style="font-size: 12px !important;">
+                                Nascimento:
+                            </label>
+                            <input name="" id="textinput2" placeholder="" value="" type="text">
+                            
+                                                        <br/>
+                            <label for="textinput3" style="font-size: 12px !important;">
+                                CPF:
+                            </label>
+                            <input name="" id="textinput3" placeholder="" value="" type="text">
+                        </fieldset>
+                
+                    </div>
+                        
+                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+ <br/>
                         <input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6a" value="on" checked="checked">
-                        <label for="radio-choice-t-6a">One</label>
+                        <label for="radio-choice-t-6a">Masculino</label>
                         <input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6b" value="off">
-                        <label for="radio-choice-t-6b">Two</label>
-                        <input type="radio" data-theme="a" name="radio-choice-t-6" id="radio-choice-t-6c" value="other">
-                        <label for="radio-choice-t-6c">Three</label>
+                        <label for="radio-choice-t-6b">Feminino</label>
                     </fieldset>
+                    <br/>
                 </form>
-                <table data-role="table" style="font-size: 12px !important; width: 100% !important" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="c" data-column-btn-text="Columns to display..." data-column-popup-theme="c">
+              
+                 <legend>Ultimos Clientes cadastrados:</legend>
+                <table data-role="table" style="font-size: 13px !important; width: 100% !important" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="c" data-column-btn-text="Columns to display..." data-column-popup-theme="c">
                     <thead>
                         <tr class="ui-bar-d">
-                            <th data-priority="2">Rank</th>
-                            <th>Movie Title</th>
-                            <th data-priority="3">Year</th>
-                            <th data-priority="1"><abbr title="Rotten Tomato Rating">Rating</abbr></th>
+                            <th data-priority="1">Nome</th>
+                            <th data-priority="2">Nascimento</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th>1</th>
                             <td><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">Citizen Kane</a></td>
                             <td>1941</td>
-                            <td>100%</td>
                         </tr>
                         <tr>
-                            <th>2</th>
                             <td><a href="http://en.wikipedia.org/wiki/Casablanca_(film)" data-rel="external">Casablanca</a></td>
                             <td>1942</td>
-                            <td>97%</td>
                         </tr>
                         <tr>
-                            <th>3</th>
                             <td><a href="http://en.wikipedia.org/wiki/The_Godfather" data-rel="external">The Godfather</a></td>
                             <td>1972</td>
-                            <td>97%</td>
                         </tr>
                         <tr>
-                            <th>4</th>
                             <td><a href="http://en.wikipedia.org/wiki/Gone_with_the_Wind_(film)" data-rel="external">Gone with the Wind</a></td>
                             <td>1939</td>
-                            <td>96%</td>
                         </tr>
                         <tr>
-                            <th>5</th>
                             <td><a href="http://en.wikipedia.org/wiki/Lawrence_of_Arabia_(film)" data-rel="external">Lawrence of Arabia</a></td>
                             <td>1962</td>
-                            <td>94%</td>
                         </tr>
                     </tbody>
                 </table>
               
             </div>
-            <div id="two" class="none" >
-                <legend>Selecione:</legend>
-                <ul data-role="listview" data-divider-theme="b" data-inset="true">
-                    <li data-role="list-divider" role="heading" >
-                        Divider
-                    </li>
-                    <li data-theme="c">
-                        <a href="#" data-transition="slide">
-                            Button
-                        </a>
-                    </li>
-                    <li data-theme="c">
-                        <a href="#page1" data-transition="slide">
-                            Button
-                        </a>
-                    </li>
-                    <li data-role="list-divider" role="heading" >
-                        Divider
-                    </li>
-                    <li data-role="list-divider" role="heading" >
-                        Divider
-                    </li>
-                    <li data-theme="c">
-                        <a href="#page1" data-transition="slide">
-                            Button
-                        </a>
-                    </li>
-                    <li data-theme="c">
-                        <a href="#page1" data-transition="slide">
-                            Button
-                        </a>
-                    </li>
-                </ul>
+            <div id="two" class="none" ><br/>
+                  <form>
+                    <label for="search-1">Procurar pelo nome:</label>
+                    <input type="search" name="search-1" id="search-1" value="" title="Digite o nome do cliente"  >
+               </form>
+                <legend>Dados Encontrados:</legend>
+                <table data-role="table" style="font-size: 13px !important; width: 100% !important" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="c" data-column-btn-text="Columns to display..." data-column-popup-theme="c">
+                    <thead>
+                        <tr class="ui-bar-d">
+                            <th data-priority="1">Nome</th>
+                            <th data-priority="2">Nascimento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">Citizen Kane</a></td>
+                            <td>1941</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://en.wikipedia.org/wiki/Casablanca_(film)" data-rel="external">Casablanca</a></td>
+                            <td>1942</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://en.wikipedia.org/wiki/The_Godfather" data-rel="external">The Godfather</a></td>
+                            <td>1972</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://en.wikipedia.org/wiki/Gone_with_the_Wind_(film)" data-rel="external">Gone with the Wind</a></td>
+                            <td>1939</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://en.wikipedia.org/wiki/Lawrence_of_Arabia_(film)" data-rel="external">Lawrence of Arabia</a></td>
+                            <td>1962</td>
+                        </tr>
+                              <td><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">Citizen Kane</a></td>
+                            <td>1941</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://en.wikipedia.org/wiki/Casablanca_(film)" data-rel="external">Casablanca</a></td>
+                            <td>1942</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://en.wikipedia.org/wiki/The_Godfather" data-rel="external">The Godfather</a></td>
+                            <td>1972</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://en.wikipedia.org/wiki/Gone_with_the_Wind_(film)" data-rel="external">Gone with the Wind</a></td>
+                            <td>1939</td>
+                        </tr>
+                        <tr>
+                            <td><a href="http://en.wikipedia.org/wiki/Lawrence_of_Arabia_(film)" data-rel="external">Lawrence of Arabia</a></td>
+                            <td>1962</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
               <div data-theme="a" data-role="footer" data-position="fixed">
                     <h3>
-                        Footer
+                       
                     </h3>
                 </div>
         </div>
