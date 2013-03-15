@@ -1,7 +1,7 @@
 package com.mycompany.myapp;
 
 
-import com.codename1.components.WebBrowser;
+//import com.codename1.components.WebBrowser;
 import com.codename1.ui.Container;
 import com.codename1.ui.Display;
 import com.codename1.ui.Form;
@@ -31,14 +31,17 @@ public class MyApplication {
             return;
         }
         Form hi = new Form();
-        hi.setLayout(new LayeredLayout());
+        hi.setLayout(new BorderLayout ());
          Container cnt = new Container(new LayeredLayout());
          
         WebBrowser wb = new WebBrowser();
         
         wb.setURL("jar:///Page.html");  
         cnt.addComponent(wb);
-        hi.addComponent(cnt);
+        hi.setScrollable(false);
+
+        hi.setScrollableY(false);
+        hi.addComponent(BorderLayout.CENTER,cnt);
         hi.show();
     }
 
