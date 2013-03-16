@@ -14,11 +14,13 @@ import com.codename1.ui.html.AsyncDocumentRequestHandlerImpl;
 import com.codename1.ui.BrowserComponent;
 import com.codename1.ui.Component;
 import com.codename1.ui.Container;
+import com.codename1.ui.Display;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.html.DefaultHTMLCallback;
 import com.codename1.ui.html.HTMLCallback;
 import com.codename1.ui.events.BrowserNavigationCallback;
 import com.codename1.ui.layouts.BorderLayout;
+import com.codename1.ui.layouts.CoordinateLayout;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -39,6 +41,7 @@ public class WebBrowser extends Container{
         if (BrowserComponent.isNativeBrowserSupported()) {
             isNative = true;
             BrowserComponent b = new BrowserComponent();
+            b.setLayout(new CoordinateLayout (Display.getInstance().getDisplayWidth(), Display.getInstance().getDisplayHeight()));
             b.setScrollable(false);
             b.setScrollableY(false);
             b.addWebEventListener("onStart", new ActionListener() {
@@ -140,7 +143,8 @@ public class WebBrowser extends Container{
             internal = h;
         }
           internal.setScrollVisible(false);
-
+          
+        this.setLayout(new CoordinateLayout (Display.getInstance().getDisplayWidth(), Display.getInstance().getDisplayHeight()));
         this.addComponent(internal);
         this.setScrollable(false);
         this.setScrollableY(false);
